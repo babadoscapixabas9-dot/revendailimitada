@@ -315,7 +315,6 @@ const Footer = () => (
 /* ─── Page ─── */
 const Index = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
-    <Navbar />
     <Hero />
     <HowItWorks />
     <Benefits />
