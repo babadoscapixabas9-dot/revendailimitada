@@ -11,26 +11,6 @@ import logo from "@/assets/logo.png";
 
 const CTA_URL = "#";
 
-/* ─── Navbar ─── */
-const Navbar = () => (
-  <nav className="fixed top-0 left-0 right-0 z-50 glass px-4 py-3">
-    <div className="mx-auto max-w-6xl flex items-center justify-between">
-      <img src={logo} alt="Ilimitado" className="h-8" />
-      <div className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
-        <a href="#beneficios" className="hover:text-foreground transition-colors">Benefícios</a>
-        <a href="#como-funciona" className="hover:text-foreground transition-colors">Como Funciona</a>
-        <a href="#oferta" className="hover:text-foreground transition-colors">Investimento</a>
-        <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
-      </div>
-      <a href={CTA_URL}>
-        <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-          Garantir Acesso
-        </Button>
-      </a>
-    </div>
-  </nav>
-);
-
 /* ─── Hero ─── */
 const Hero = () => (
   <section className="relative overflow-hidden px-4 pt-20 pb-16 md:pt-32 md:pb-24">
