@@ -1,4 +1,4 @@
-import { Check, Key, LayoutDashboard, Users, TrendingUp, Star, ArrowRight, ChevronRight, Zap } from "lucide-react";
+import { Check, Key, LayoutDashboard, Users, TrendingUp, Star, ArrowRight, ChevronRight, Zap, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -6,13 +6,74 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 const CTA_URL = "#";
 
+/* ─── Navbar ─── */
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
+  const links = [
+    { label: "Benefícios", href: "#beneficios" },
+    { label: "Como Funciona", href: "#como-funciona" },
+    { label: "Investimento", href: "#oferta" },
+    { label: "FAQ", href: "#faq" },
+  ];
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 glass">
+      <div className="mx-auto max-w-6xl flex items-center justify-between px-4 py-3">
+        <a href="#" className="flex items-center gap-2">
+          <img src={logo} alt="Extensão Ilimitada" className="h-10 w-auto" />
+        </a>
+
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-8">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              {l.label}
+            </a>
+          ))}
+        </div>
+
+        <div className="hidden md:block">
+          <a href={CTA_URL}>
+            <Button size="sm" className="font-heading font-bold">
+              Garantir Acesso
+            </Button>
+          </a>
+        </div>
+
+        {/* Mobile toggle */}
+        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden glass border-t border-border px-4 pb-4 space-y-3">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2">
+              {l.label}
+            </a>
+          ))}
+          <a href={CTA_URL}>
+            <Button size="sm" className="w-full font-heading font-bold">
+              Garantir Acesso
+            </Button>
+          </a>
+        </div>
+      )}
+    </nav>
+  );
+};
+
 /* ─── Hero ─── */
 const Hero = () => (
-  <section className="relative overflow-hidden px-4 pt-20 pb-16 md:pt-32 md:pb-24">
-    {/* Background glow */}
+  <section className="relative overflow-hidden px-4 pt-28 pb-16 md:pt-40 md:pb-24">
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
 
     <div className="relative mx-auto max-w-5xl text-center">
@@ -48,12 +109,11 @@ const Hero = () => (
       </div>
 
       <a href={CTA_URL}>
-        <Button size="lg" className="text-lg px-10 py-7 rounded-xl glow-green animate-pulse-glow font-heading font-bold">
+        <Button size="lg" className="text-lg px-10 py-7 rounded-xl glow-primary animate-pulse-glow font-heading font-bold">
           Quero me tornar revendedor agora <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </a>
 
-      {/* Dashboard mockup */}
       <div className="mt-16 mx-auto max-w-3xl glass rounded-2xl p-6 md:p-8">
         <div className="grid grid-cols-3 gap-4 mb-6">
           {[
@@ -78,7 +138,7 @@ const Hero = () => (
 
 /* ─── Como Funciona ─── */
 const HowItWorks = () => (
-  <section className="px-4 py-20 md:py-28">
+  <section id="como-funciona" className="px-4 py-20 md:py-28">
     <div className="mx-auto max-w-5xl">
       <h2 className="font-heading text-3xl font-bold text-center md:text-4xl mb-4">
         Como <span className="text-primary">Funciona</span>
@@ -111,7 +171,6 @@ const HowItWorks = () => (
         ))}
       </div>
 
-      {/* Projeção de lucro */}
       <div className="glass rounded-2xl p-8 md:p-10">
         <h3 className="font-heading text-2xl font-bold text-center mb-8">
           Projeção de <span className="text-primary">Lucro</span>
@@ -136,7 +195,7 @@ const HowItWorks = () => (
 
 /* ─── O que você recebe ─── */
 const Benefits = () => (
-  <section className="px-4 py-20 md:py-28">
+  <section id="beneficios" className="px-4 py-20 md:py-28">
     <div className="mx-auto max-w-5xl">
       <h2 className="font-heading text-3xl font-bold text-center md:text-4xl mb-14">
         O Que Você <span className="text-primary">Recebe</span>
@@ -149,9 +208,9 @@ const Benefits = () => (
           { icon: Users, title: "Grupo de Suporte", desc: "Comunidade + suporte para ajudar nas vendas" },
           { icon: TrendingUp, title: "Produto com Alta Demanda", desc: "Ferramenta útil que vende fácil" },
         ].map((b) => (
-          <div key={b.title} className="glass-card rounded-2xl p-8 hover:border-accent/40 transition-colors">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 border border-accent/20 mb-4">
-              <b.icon className="h-6 w-6 text-accent" />
+          <div key={b.title} className="glass-card rounded-2xl p-8 hover:border-primary/40 transition-colors">
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 mb-4">
+              <b.icon className="h-6 w-6 text-primary" />
             </div>
             <h3 className="font-heading text-lg font-bold mb-2">{b.title}</h3>
             <p className="text-muted-foreground text-sm">{b.desc}</p>
@@ -214,7 +273,7 @@ const SocialProof = () => (
             </div>
             <p className="text-foreground mb-4 italic">"{t.text}"</p>
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-violet flex items-center justify-center text-sm font-bold text-foreground">
+              <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-sm font-bold text-primary-foreground">
                 {t.name[0]}
               </div>
               <span className="font-heading font-semibold">{t.name}</span>
@@ -228,7 +287,7 @@ const SocialProof = () => (
 
 /* ─── Oferta ─── */
 const Offer = () => (
-  <section className="px-4 py-20 md:py-28">
+  <section id="oferta" className="px-4 py-20 md:py-28">
     <div className="mx-auto max-w-2xl text-center glass rounded-3xl p-10 md:p-16 border border-primary/20">
       <span className="inline-block rounded-full bg-primary/10 border border-primary/30 px-4 py-1 text-sm font-semibold text-primary mb-6">
         Oferta Especial
@@ -242,7 +301,7 @@ const Offer = () => (
         <span className="text-muted-foreground text-sm">pagamento único • acesso vitalício</span>
       </div>
       <a href={CTA_URL}>
-        <Button size="lg" className="text-lg px-12 py-7 rounded-xl glow-green animate-pulse-glow font-heading font-bold w-full sm:w-auto">
+        <Button size="lg" className="text-lg px-12 py-7 rounded-xl glow-primary animate-pulse-glow font-heading font-bold w-full sm:w-auto">
           Quero garantir meu acesso agora <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </a>
@@ -259,7 +318,7 @@ const faqItems = [
 ];
 
 const FAQ = () => (
-  <section className="px-4 py-20 md:py-28">
+  <section id="faq" className="px-4 py-20 md:py-28">
     <div className="mx-auto max-w-3xl">
       <h2 className="font-heading text-3xl font-bold text-center md:text-4xl mb-14">
         Perguntas <span className="text-primary">Frequentes</span>
@@ -293,7 +352,7 @@ const FinalCTA = () => (
         Por apenas R$9,90 você acessa o painel, compra chaves e começa a faturar imediatamente.
       </p>
       <a href={CTA_URL}>
-        <Button size="lg" className="text-lg px-12 py-7 rounded-xl glow-green animate-pulse-glow font-heading font-bold">
+        <Button size="lg" className="text-lg px-12 py-7 rounded-xl glow-primary animate-pulse-glow font-heading font-bold">
           Quero acesso ao painel por R$9,90 <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </a>
@@ -311,6 +370,7 @@ const Footer = () => (
 /* ─── Page ─── */
 const Index = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
+    <Navbar />
     <Hero />
     <HowItWorks />
     <Benefits />
