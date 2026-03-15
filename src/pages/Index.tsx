@@ -1,5 +1,6 @@
 import { Check, Key, LayoutDashboard, Users, TrendingUp, Star, ArrowRight, ChevronRight, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { RainbowButton } from "@/components/RainbowButton";
 import {
   Accordion,
   AccordionContent,
@@ -12,8 +13,10 @@ const CTA_URL = "#";
 /* ─── Hero ─── */
 const Hero = () => (
   <section className="relative overflow-hidden px-4 pt-20 pb-16 md:pt-32 md:pb-24">
-    {/* Background glow */}
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
+    {/* Background warm glow */}
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-primary/8 blur-[160px] pointer-events-none" />
+    <div className="absolute top-20 left-1/3 w-[400px] h-[400px] rounded-full bg-[hsl(16_90%_50%/0.06)] blur-[120px] pointer-events-none" />
+    <div className="absolute top-10 right-1/4 w-[300px] h-[300px] rounded-full bg-[hsl(0_80%_50%/0.04)] blur-[100px] pointer-events-none" />
 
     <div className="relative mx-auto max-w-5xl text-center">
       <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
@@ -48,9 +51,9 @@ const Hero = () => (
       </div>
 
       <a href={CTA_URL}>
-        <Button size="lg" className="text-lg px-10 py-7 rounded-xl glow-green animate-pulse-glow font-heading font-bold">
+        <RainbowButton className="text-lg px-10 py-5 font-heading font-bold">
           Quero me tornar revendedor agora <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
+        </RainbowButton>
       </a>
 
       {/* Dashboard mockup */}
@@ -149,9 +152,9 @@ const Benefits = () => (
           { icon: Users, title: "Grupo de Suporte", desc: "Comunidade + suporte para ajudar nas vendas" },
           { icon: TrendingUp, title: "Produto com Alta Demanda", desc: "Ferramenta útil que vende fácil" },
         ].map((b) => (
-          <div key={b.title} className="glass-card rounded-2xl p-8 hover:border-accent/40 transition-colors">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 border border-accent/20 mb-4">
-              <b.icon className="h-6 w-6 text-accent" />
+          <div key={b.title} className="glass-card rounded-2xl p-8 hover:border-primary/30 transition-colors">
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 mb-4">
+              <b.icon className="h-6 w-6 text-primary" />
             </div>
             <h3 className="font-heading text-lg font-bold mb-2">{b.title}</h3>
             <p className="text-muted-foreground text-sm">{b.desc}</p>
@@ -214,7 +217,7 @@ const SocialProof = () => (
             </div>
             <p className="text-foreground mb-4 italic">"{t.text}"</p>
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-violet flex items-center justify-center text-sm font-bold text-foreground">
+              <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-sm font-bold text-primary">
                 {t.name[0]}
               </div>
               <span className="font-heading font-semibold">{t.name}</span>
@@ -242,9 +245,9 @@ const Offer = () => (
         <span className="text-muted-foreground text-sm">pagamento único • acesso vitalício</span>
       </div>
       <a href={CTA_URL}>
-        <Button size="lg" className="text-lg px-12 py-7 rounded-xl glow-green animate-pulse-glow font-heading font-bold w-full sm:w-auto">
+        <RainbowButton className="text-lg px-12 py-5 font-heading font-bold">
           Quero garantir meu acesso agora <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
+        </RainbowButton>
       </a>
     </div>
   </section>
@@ -293,9 +296,9 @@ const FinalCTA = () => (
         Por apenas R$9,90 você acessa o painel, compra chaves e começa a faturar imediatamente.
       </p>
       <a href={CTA_URL}>
-        <Button size="lg" className="text-lg px-12 py-7 rounded-xl glow-green animate-pulse-glow font-heading font-bold">
+        <RainbowButton className="text-lg px-12 py-5 font-heading font-bold">
           Quero acesso ao painel por R$9,90 <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
+        </RainbowButton>
       </a>
     </div>
   </section>
