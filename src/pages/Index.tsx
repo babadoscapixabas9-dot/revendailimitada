@@ -53,7 +53,7 @@ const Hero = () => (
         ))}
       </div>
 
-      <a href={CTA_URL}>
+      <a href="#oferta">
         <RainbowButton className="text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-5 font-heading font-bold">
           Quero me tornar revendedor <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
         </RainbowButton>
@@ -241,7 +241,7 @@ const SocialProof = () => (
 
 /* ─── Oferta ─── */
 const Offer = () => (
-  <section className="px-4 py-14 md:py-28">
+  <section id="oferta" className="px-4 py-14 md:py-28 scroll-mt-4">
     <div className="mx-auto max-w-2xl text-center glass rounded-2xl md:rounded-3xl p-6 sm:p-10 md:p-16 border border-primary/20">
       <span className="inline-block rounded-full bg-primary/10 border border-primary/30 px-3 md:px-4 py-1 text-xs md:text-sm font-semibold text-primary mb-4 md:mb-6">
         Oferta Especial
