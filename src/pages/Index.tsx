@@ -293,18 +293,18 @@ const FAQ = () => (
 
 /* ─── CTA Final ─── */
 const FinalCTA = () => (
-  <section className="relative px-4 py-14 md:py-28">
+  <section className="relative px-5 py-12 md:py-28">
     <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
     <div className="relative mx-auto max-w-3xl text-center">
-      <h2 className="font-heading text-2xl sm:text-3xl font-bold md:text-5xl mb-4 md:mb-6 px-2">
+      <h2 className="font-heading text-xl sm:text-3xl font-bold md:text-5xl mb-3 md:mb-6">
         Comece hoje mesmo a revender e{" "}
         <span className="text-primary">lucrar online</span>
       </h2>
-      <p className="text-muted-foreground text-base md:text-lg mb-8 md:mb-10 max-w-xl mx-auto px-2">
+      <p className="text-muted-foreground text-[0.85rem] md:text-lg mb-6 md:mb-10 max-w-xl mx-auto">
         Por apenas R$9,90 você acessa o painel, compra chaves e começa a faturar imediatamente.
       </p>
       <a href={CTA_URL}>
-        <RainbowButton className="text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-3.5 sm:py-4 md:py-5 font-heading font-bold">
+        <RainbowButton className="w-full sm:w-auto text-[0.8rem] sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 font-heading font-bold">
           Quero acesso ao painel por R$9,90 <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
         </RainbowButton>
       </a>
