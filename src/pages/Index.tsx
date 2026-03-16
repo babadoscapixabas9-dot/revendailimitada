@@ -147,25 +147,25 @@ const HowItWorks = () => (
 
 /* ─── O que você recebe ─── */
 const Benefits = () => (
-  <section className="px-4 py-14 md:py-28">
+  <section className="px-5 py-12 md:py-28">
     <div className="mx-auto max-w-5xl">
-      <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center md:text-4xl mb-8 md:mb-14">
+      <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
         O Que Você <span className="text-primary">Recebe</span>
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+      <div className="grid grid-cols-2 gap-2.5 md:gap-6">
         {[
           { icon: LayoutDashboard, title: "Painel de Revenda Exclusivo", desc: "Gerencie e compre chaves quando quiser" },
           { icon: Key, title: "Chaves Vitalícias", desc: "Produto com alto valor percebido" },
           { icon: Users, title: "Grupo de Suporte", desc: "Comunidade + suporte para ajudar nas vendas" },
           { icon: TrendingUp, title: "Produto com Alta Demanda", desc: "Ferramenta útil que vende fácil" },
         ].map((b) => (
-          <div key={b.title} className="glass-card rounded-xl md:rounded-2xl p-5 md:p-8 hover:border-primary/30 transition-colors">
-            <div className="inline-flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-lg md:rounded-xl bg-primary/10 border border-primary/20 mb-3 md:mb-4">
-              <b.icon className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+          <div key={b.title} className="glass-card rounded-xl md:rounded-2xl p-4 md:p-8 hover:border-primary/30 transition-colors">
+            <div className="inline-flex h-9 w-9 md:h-12 md:w-12 items-center justify-center rounded-lg md:rounded-xl bg-primary/10 border border-primary/20 mb-2.5 md:mb-4">
+              <b.icon className="h-4 w-4 md:h-6 md:w-6 text-primary" />
             </div>
-            <h3 className="font-heading text-base md:text-lg font-bold mb-1.5 md:mb-2">{b.title}</h3>
-            <p className="text-muted-foreground text-sm">{b.desc}</p>
+            <h3 className="font-heading text-[0.8rem] md:text-lg font-bold mb-1 md:mb-2 leading-tight">{b.title}</h3>
+            <p className="text-muted-foreground text-[0.72rem] md:text-sm leading-snug">{b.desc}</p>
           </div>
         ))}
       </div>
