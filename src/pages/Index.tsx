@@ -354,6 +354,7 @@ const Index = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
     <SaleNotification />
     <Hero />
+    <WhatItDoes />
     <HowItWorks />
     <Benefits />
     <ForWho />
