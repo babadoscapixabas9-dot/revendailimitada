@@ -1,4 +1,4 @@
-import { Check, Key, LayoutDashboard, Users, TrendingUp, Star, ArrowRight, ChevronRight, Zap } from "lucide-react";
+import { Check, Key, LayoutDashboard, Users, TrendingUp, Star, ArrowRight, ChevronRight, Zap, Infinity, Sparkles, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RainbowButton } from "@/components/RainbowButton";
 import {
