@@ -19,13 +19,17 @@ const playCashSound = () => {
   try {
     const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
     
-    // Coin hit sound
+    // Master volume
+    const master = ctx.createGain();
+    master.gain.setValueAtTime(0.9, ctx.currentTime);
+    master.connect(ctx.destination);
+
     const playTone = (freq: number, startTime: number, duration: number, gain: number) => {
       const osc = ctx.createOscillator();
       const g = ctx.createGain();
       osc.connect(g);
-      g.connect(ctx.destination);
-      osc.type = "sine";
+      g.connect(master);
+      osc.type = "square";
       osc.frequency.setValueAtTime(freq, ctx.currentTime + startTime);
       g.gain.setValueAtTime(gain, ctx.currentTime + startTime);
       g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + startTime + duration);
@@ -33,30 +37,33 @@ const playCashSound = () => {
       osc.stop(ctx.currentTime + startTime + duration);
     };
 
-    // Cash register "cha-ching" 
-    playTone(1200, 0, 0.08, 0.15);
-    playTone(1800, 0.03, 0.06, 0.12);
-    playTone(2400, 0.08, 0.15, 0.18);
-    playTone(3200, 0.1, 0.2, 0.12);
-    playTone(2000, 0.15, 0.3, 0.08);
+    // Cash register "cha-ching" — loud & punchy
+    playTone(800, 0, 0.12, 0.6);
+    playTone(1200, 0.04, 0.1, 0.5);
+    playTone(1600, 0.1, 0.18, 0.7);
+    playTone(2200, 0.14, 0.25, 0.5);
+    playTone(1400, 0.2, 0.35, 0.35);
 
-    // Metallic ring
-    const buf = ctx.createBuffer(1, ctx.sampleRate * 0.15, ctx.sampleRate);
+    // Metallic ring — louder
+    const buf = ctx.createBuffer(1, ctx.sampleRate * 0.2, ctx.sampleRate);
     const data = buf.getChannelData(0);
     for (let i = 0; i < data.length; i++) {
-      data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.03)) * 0.06;
+      data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.05)) * 0.4;
     }
     const noise = ctx.createBufferSource();
     noise.buffer = buf;
     const filter = ctx.createBiquadFilter();
     filter.type = "bandpass";
-    filter.frequency.value = 4000;
-    filter.Q.value = 8;
+    filter.frequency.value = 3000;
+    filter.Q.value = 5;
+    const noiseGain = ctx.createGain();
+    noiseGain.gain.setValueAtTime(0.6, ctx.currentTime);
     noise.connect(filter);
-    filter.connect(ctx.destination);
+    filter.connect(noiseGain);
+    noiseGain.connect(master);
     noise.start(ctx.currentTime + 0.08);
 
-    setTimeout(() => ctx.close(), 1000);
+    setTimeout(() => ctx.close(), 1500);
   } catch (e) {
     // Audio not supported
   }
