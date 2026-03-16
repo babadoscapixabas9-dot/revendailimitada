@@ -90,6 +90,10 @@ export default {
           "0%, 100%": { boxShadow: "0 0 20px hsl(16 90% 50% / 0.3)" },
           "50%": { boxShadow: "0 0 40px hsl(16 90% 50% / 0.5)" },
         },
+        "progress-bar": {
+          from: { width: "0%" },
+          to: { width: "75%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -97,6 +101,7 @@ export default {
         "counter-up": "counter-up 0.6s ease-out forwards",
         "fade-in": "fade-in 0.6s ease-out forwards",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "progress-bar": "progress-bar 1.2s ease-out 1s forwards",
       },
     },
   },
