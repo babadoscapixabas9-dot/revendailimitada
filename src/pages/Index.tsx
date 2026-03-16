@@ -87,29 +87,31 @@ const Hero = () => (
 
 /* ─── Como Funciona ─── */
 const HowItWorks = () => (
-  <section className="px-4 py-14 md:py-28">
+  <section className="px-5 py-12 md:py-28">
     <div className="mx-auto max-w-5xl">
-      <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center md:text-4xl mb-3 md:mb-4">
+      <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-2 md:mb-4">
         Como <span className="text-primary">Funciona</span>
       </h2>
-      <p className="text-center text-muted-foreground text-sm md:text-base mb-10 md:mb-14 max-w-xl mx-auto">
+      <p className="text-center text-muted-foreground text-[0.8rem] md:text-base mb-8 md:mb-14 max-w-xl mx-auto">
         3 passos simples para começar a lucrar hoje mesmo
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 mb-10 md:mb-16">
+      <div className="space-y-3 md:space-y-0 md:grid md:grid-cols-3 md:gap-4 mb-8 md:mb-16">
         {[
           { step: "01", title: "Compre o Acesso", desc: "Adquira o painel de revenda por apenas R$9,90", icon: LayoutDashboard },
           { step: "02", title: "Compre Chaves", desc: "Dentro do painel, compre chaves vitalícias por R$39,90", icon: Key },
           { step: "03", title: "Revenda e Lucre", desc: "Revenda cada chave por até R$147 e fique com todo o lucro", icon: TrendingUp },
         ].map((s, i) => (
           <div key={s.step} className="relative">
-            <div className="glass-card rounded-xl md:rounded-2xl p-6 md:p-8 text-center h-full">
-              <div className="inline-flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-xl md:rounded-2xl bg-primary/10 border border-primary/20 mb-3 md:mb-4">
-                <s.icon className="h-6 w-6 md:h-7 md:w-7 text-primary" />
+            <div className="glass-card rounded-xl md:rounded-2xl p-4 md:p-8 flex items-center gap-4 md:flex-col md:text-center h-full">
+              <div className="flex h-11 w-11 md:h-14 md:w-14 shrink-0 items-center justify-center rounded-xl md:rounded-2xl bg-primary/10 border border-primary/20">
+                <s.icon className="h-5 w-5 md:h-7 md:w-7 text-primary" />
               </div>
-              <span className="block text-[10px] md:text-xs font-bold text-accent tracking-widest uppercase mb-1.5 md:mb-2">Passo {s.step}</span>
-              <h3 className="font-heading text-lg md:text-xl font-bold mb-1.5 md:mb-2">{s.title}</h3>
-              <p className="text-muted-foreground text-sm">{s.desc}</p>
+              <div className="flex-1 md:flex-none">
+                <span className="block text-[9px] md:text-xs font-bold text-accent tracking-widest uppercase mb-0.5 md:mb-2">Passo {s.step}</span>
+                <h3 className="font-heading text-[0.95rem] md:text-xl font-bold mb-0.5 md:mb-2">{s.title}</h3>
+                <p className="text-muted-foreground text-[0.78rem] md:text-sm leading-snug">{s.desc}</p>
+              </div>
             </div>
             {i < 2 && (
               <div className="hidden md:flex absolute top-1/2 -right-5 -translate-y-1/2 z-10">
@@ -121,20 +123,20 @@ const HowItWorks = () => (
       </div>
 
       {/* Projeção de lucro */}
-      <div className="glass rounded-xl md:rounded-2xl p-6 md:p-10">
-        <h3 className="font-heading text-xl md:text-2xl font-bold text-center mb-6 md:mb-8">
+      <div className="glass rounded-xl md:rounded-2xl p-5 md:p-10">
+        <h3 className="font-heading text-lg md:text-2xl font-bold text-center mb-4 md:mb-8">
           Projeção de <span className="text-primary">Lucro</span>
         </h3>
-        <div className="grid grid-cols-3 gap-3 md:gap-6">
+        <div className="grid grid-cols-3 gap-2 md:gap-6">
           {[
             { keys: 5, revenue: "R$735" },
             { keys: 10, revenue: "R$1.470" },
             { keys: 20, revenue: "R$2.940" },
           ].map((p) => (
-            <div key={p.keys} className="glass-card rounded-lg md:rounded-xl p-3 md:p-6 text-center">
-              <p className="text-[10px] md:text-sm text-muted-foreground mb-0.5 md:mb-1">Venda {p.keys} chaves</p>
-              <p className="text-xl sm:text-2xl md:text-4xl font-heading font-extrabold text-primary">{p.revenue}</p>
-              <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5 md:mt-1">de receita bruta</p>
+            <div key={p.keys} className="glass-card rounded-lg md:rounded-xl p-2.5 md:p-6 text-center">
+              <p className="text-[9px] md:text-sm text-muted-foreground mb-0.5 md:mb-1">Venda {p.keys} chaves</p>
+              <p className="text-lg sm:text-2xl md:text-4xl font-heading font-extrabold text-primary">{p.revenue}</p>
+              <p className="text-[9px] md:text-xs text-muted-foreground mt-0.5 md:mt-1">de receita bruta</p>
             </div>
           ))}
         </div>
