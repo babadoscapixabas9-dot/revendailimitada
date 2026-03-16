@@ -14,27 +14,26 @@ const CTA_URL = "#";
 
 /* ─── Hero ─── */
 const Hero = () => (
-  <section className="relative overflow-hidden px-4 pt-14 pb-12 md:pt-32 md:pb-24">
+  <section className="relative overflow-hidden px-5 pt-12 pb-10 md:pt-32 md:pb-24">
     {/* Background warm glow */}
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] md:w-[800px] h-[400px] md:h-[600px] rounded-full bg-primary/8 blur-[120px] md:blur-[160px] pointer-events-none" />
-    <div className="absolute top-20 left-1/3 w-[250px] md:w-[400px] h-[250px] md:h-[400px] rounded-full bg-[hsl(16_90%_50%/0.06)] blur-[80px] md:blur-[120px] pointer-events-none" />
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] md:w-[800px] h-[350px] md:h-[600px] rounded-full bg-primary/8 blur-[100px] md:blur-[160px] pointer-events-none" />
+    <div className="absolute top-20 left-1/3 w-[200px] md:w-[400px] h-[200px] md:h-[400px] rounded-full bg-[hsl(16_90%_50%/0.06)] blur-[60px] md:blur-[120px] pointer-events-none" />
 
     <div className="relative mx-auto max-w-5xl text-center">
-      <img src={logo} alt="Ilimitado" className="h-9 md:h-14 mx-auto mb-6 md:mb-8" />
+      <img src={logo} alt="Ilimitado" className="h-8 md:h-14 mx-auto mb-5 md:mb-8" />
 
-
-      <h1 className="font-heading text-[1.75rem] leading-[1.2] font-extrabold tracking-tight sm:text-4xl md:text-6xl lg:text-7xl glow-text mb-4 md:mb-6 px-1">
+      <h1 className="font-heading text-[1.55rem] leading-[1.15] font-extrabold tracking-tight sm:text-4xl md:text-6xl lg:text-7xl glow-text mb-3.5 md:mb-6">
         Seja Revendedor da Extensão Ilimitada e{" "}
         <span className="text-primary">Lucre Todos os Dias</span>
       </h1>
 
-      <p className="mx-auto max-w-2xl text-base md:text-xl text-muted-foreground mb-6 md:mb-8 px-2">
+      <p className="mx-auto max-w-2xl text-[0.9rem] leading-relaxed md:text-xl text-muted-foreground mb-5 md:mb-8">
         Com apenas <strong className="text-foreground">R$9,90</strong> você recebe acesso ao painel de revenda + grupo de suporte e pode comprar chaves vitalícias por{" "}
         <strong className="text-foreground">R$39,90</strong> para revender por até{" "}
         <strong className="text-primary">R$147</strong>.
       </p>
 
-      <div className="mx-auto max-w-md text-left space-y-2.5 md:space-y-3 mb-8 md:mb-10 px-2">
+      <div className="mx-auto max-w-sm text-left space-y-2 md:space-y-3 mb-6 md:mb-10">
         {[
           "Produto digital fácil de vender",
           "Margem de lucro alta",
@@ -45,28 +44,28 @@ const Hero = () => (
             <div className="flex h-5 w-5 md:h-6 md:w-6 shrink-0 items-center justify-center rounded-full bg-primary/20">
               <Check className="h-3 w-3 md:h-4 md:w-4 text-primary" />
             </div>
-            <span className="text-foreground text-sm md:text-base">{item}</span>
+            <span className="text-foreground text-[0.8rem] md:text-base">{item}</span>
           </div>
         ))}
       </div>
 
       <a href="#oferta">
-        <RainbowButton className="text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-5 font-heading font-bold">
+        <RainbowButton className="w-full sm:w-auto text-[0.8rem] sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 font-heading font-bold">
           Quero me tornar revendedor <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
         </RainbowButton>
       </a>
 
       {/* Dashboard mockup */}
-      <div className="mt-10 md:mt-16 mx-auto max-w-3xl glass rounded-xl md:rounded-2xl p-4 md:p-8 animate-fade-in opacity-0" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
-        <div className="grid grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
+      <div className="mt-8 md:mt-16 mx-auto max-w-3xl glass rounded-xl md:rounded-2xl p-3.5 md:p-8 animate-fade-in opacity-0" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
+        <div className="grid grid-cols-3 gap-1.5 md:gap-4 mb-3 md:mb-6">
           {[
             { label: "Chaves Ativas", value: "24", delay: "0.5s" },
             { label: "Receita Total", value: "R$3.528", delay: "0.7s" },
             { label: "Lucro Líquido", value: "R$2.570", delay: "0.9s" },
           ].map((s) => (
-            <div key={s.label} className="glass-card rounded-lg md:rounded-xl p-2.5 md:p-4 text-center animate-counter-up opacity-0" style={{ animationDelay: s.delay, animationFillMode: 'forwards' }}>
-              <p className="text-[10px] md:text-sm text-muted-foreground leading-tight">{s.label}</p>
-              <p className="text-base md:text-2xl font-heading font-bold text-primary mt-0.5 md:mt-1">{s.value}</p>
+            <div key={s.label} className="glass-card rounded-lg md:rounded-xl p-2 md:p-4 text-center animate-counter-up opacity-0" style={{ animationDelay: s.delay, animationFillMode: 'forwards' }}>
+              <p className="text-[9px] md:text-sm text-muted-foreground leading-tight">{s.label}</p>
+              <p className="text-sm md:text-2xl font-heading font-bold text-primary mt-0.5 md:mt-1">{s.value}</p>
             </div>
           ))}
         </div>
@@ -80,7 +79,7 @@ const Hero = () => (
             }}
           />
         </div>
-        <p className="text-[10px] md:text-xs text-muted-foreground mt-1.5 md:mt-2 text-right animate-fade-in opacity-0" style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}>75% da meta mensal</p>
+        <p className="text-[9px] md:text-xs text-muted-foreground mt-1.5 md:mt-2 text-right animate-fade-in opacity-0" style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}>75% da meta mensal</p>
       </div>
     </div>
   </section>
