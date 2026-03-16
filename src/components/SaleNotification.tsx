@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import logo from "@/assets/logo.png";
 
 const NAMES = [
@@ -15,8 +15,71 @@ interface Notification {
 
 let idCounter = 0;
 
+const playCashSound = () => {
+  try {
+    const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+    
+    // Coin hit sound
+    const playTone = (freq: number, startTime: number, duration: number, gain: number) => {
+      const osc = ctx.createOscillator();
+      const g = ctx.createGain();
+      osc.connect(g);
+      g.connect(ctx.destination);
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, ctx.currentTime + startTime);
+      g.gain.setValueAtTime(gain, ctx.currentTime + startTime);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + startTime + duration);
+      osc.start(ctx.currentTime + startTime);
+      osc.stop(ctx.currentTime + startTime + duration);
+    };
+
+    // Cash register "cha-ching" 
+    playTone(1200, 0, 0.08, 0.15);
+    playTone(1800, 0.03, 0.06, 0.12);
+    playTone(2400, 0.08, 0.15, 0.18);
+    playTone(3200, 0.1, 0.2, 0.12);
+    playTone(2000, 0.15, 0.3, 0.08);
+
+    // Metallic ring
+    const buf = ctx.createBuffer(1, ctx.sampleRate * 0.15, ctx.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < data.length; i++) {
+      data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.03)) * 0.06;
+    }
+    const noise = ctx.createBufferSource();
+    noise.buffer = buf;
+    const filter = ctx.createBiquadFilter();
+    filter.type = "bandpass";
+    filter.frequency.value = 4000;
+    filter.Q.value = 8;
+    noise.connect(filter);
+    filter.connect(ctx.destination);
+    noise.start(ctx.currentTime + 0.08);
+
+    setTimeout(() => ctx.close(), 1000);
+  } catch (e) {
+    // Audio not supported
+  }
+};
+
 export const SaleNotification = () => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
+  const [userInteracted, setUserInteracted] = useState(false);
+
+  // Track user interaction to enable audio
+  useEffect(() => {
+    const handler = () => setUserInteracted(true);
+    window.addEventListener("click", handler, { once: true });
+    window.addEventListener("touchstart", handler, { once: true });
+    return () => {
+      window.removeEventListener("click", handler);
+      window.removeEventListener("touchstart", handler);
+    };
+  }, []);
+
+  const playSound = useCallback(() => {
+    if (userInteracted) playCashSound();
+  }, [userInteracted]);
 
   useEffect(() => {
     const showPair = () => {
@@ -32,7 +95,11 @@ export const SaleNotification = () => {
       };
 
       setNotifications((prev) => [...prev, n1]);
-      setTimeout(() => setNotifications((prev) => [...prev, n2]), 800);
+      playSound();
+      setTimeout(() => {
+        setNotifications((prev) => [...prev, n2]);
+        playSound();
+      }, 800);
 
       setTimeout(() => {
         setNotifications((prev) =>
@@ -57,7 +124,7 @@ export const SaleNotification = () => {
       clearTimeout(initialTimeout);
       clearInterval(interval);
     };
-  }, []);
+  }, [playSound]);
 
   return (
     <div className="fixed top-4 left-4 right-4 md:left-auto md:right-6 md:top-6 z-[200] flex flex-col gap-2 md:w-[340px] pointer-events-none">
