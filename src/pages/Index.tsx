@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import logo from "@/assets/logo.png";
 import { SaleNotification } from "@/components/SaleNotification";
+import { HeroNotifications } from "@/components/HeroNotifications";
 
 const CTA_URL = "#";
 
