@@ -85,6 +85,36 @@ const Hero = () => (
   </section>
 );
 
+/* ─── O Que a Extensão Faz ─── */
+const WhatItDoes = () => (
+  <section className="px-5 py-12 md:py-28">
+    <div className="mx-auto max-w-5xl">
+      <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-2 md:mb-4">
+        O Que a Extensão <span className="text-primary">Faz</span>
+      </h2>
+      <p className="text-center text-muted-foreground text-[0.8rem] md:text-base mb-8 md:mb-14 max-w-xl mx-auto">
+        Veja os benefícios incríveis que seus clientes terão
+      </p>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6">
+        {[
+          { icon: Infinity, title: "Prompts Infinitos", desc: "Use prompts ilimitados sem gastar nenhum crédito na Lovable" },
+          { icon: Sparkles, title: "Projetos com 0 Créditos", desc: "Crie projetos completos gastando zero créditos" },
+          { icon: BadgeCheck, title: "Remover Badge", desc: "Remova a badge da Lovable dos seus projetos facilmente" },
+        ].map((item) => (
+          <div key={item.title} className="glass-card rounded-xl md:rounded-2xl p-5 md:p-8 text-center hover:border-primary/30 transition-colors">
+            <div className="inline-flex h-11 w-11 md:h-14 md:w-14 items-center justify-center rounded-xl md:rounded-2xl bg-primary/10 border border-primary/20 mb-3 md:mb-5">
+              <item.icon className="h-5 w-5 md:h-7 md:w-7 text-primary" />
+            </div>
+            <h3 className="font-heading text-[0.9rem] md:text-xl font-bold mb-1.5 md:mb-2">{item.title}</h3>
+            <p className="text-muted-foreground text-[0.78rem] md:text-sm leading-snug">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 /* ─── Como Funciona ─── */
 const HowItWorks = () => (
   <section className="px-5 py-12 md:py-28">
