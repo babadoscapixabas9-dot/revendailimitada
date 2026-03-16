@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import logo from "@/assets/logo.png";
+import { SaleNotification } from "@/components/SaleNotification";
 
 const CTA_URL = "#";
 
