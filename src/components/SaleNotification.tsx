@@ -70,7 +70,7 @@ export const SaleNotification = () => {
               : "translate-x-full opacity-0"
           }`}
           style={{
-            background: "hsl(0 0% 10% / 0.55)",
+            background: "hsl(0 0% 10% / 0.65)",
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
           }}

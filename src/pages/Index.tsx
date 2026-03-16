@@ -22,9 +22,6 @@ const Hero = () => (
     <div className="relative mx-auto max-w-5xl text-center">
       <img src={logo} alt="Ilimitado" className="h-9 md:h-14 mx-auto mb-6 md:mb-8" />
 
-      <span className="inline-flex items-center gap-1.5 md:gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 md:px-4 py-1 md:py-1.5 text-xs md:text-sm font-medium text-primary mb-4 md:mb-6">
-        <Zap className="h-3.5 w-3.5 md:h-4 md:w-4" /> Oportunidade Exclusiva
-      </span>
 
       <h1 className="font-heading text-[1.75rem] leading-[1.2] font-extrabold tracking-tight sm:text-4xl md:text-6xl lg:text-7xl glow-text mb-4 md:mb-6 px-1">
         Seja Revendedor da Extensão Ilimitada e{" "}
