@@ -209,26 +209,26 @@ const testimonials = [
 ];
 
 const SocialProof = () => (
-  <section className="px-4 py-14 md:py-28">
+  <section className="px-5 py-12 md:py-28">
     <div className="mx-auto max-w-5xl">
-      <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center md:text-4xl mb-8 md:mb-14">
+      <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
         O Que Nossos Revendedores <span className="text-primary">Dizem</span>
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+      <div className="grid grid-cols-2 gap-2.5 md:gap-6">
         {testimonials.map((t) => (
-          <div key={t.name} className="glass-card rounded-xl md:rounded-2xl p-5 md:p-8">
-            <div className="flex gap-0.5 md:gap-1 mb-3 md:mb-4">
+          <div key={t.name} className="glass-card rounded-xl md:rounded-2xl p-3.5 md:p-8">
+            <div className="flex gap-0.5 md:gap-1 mb-2 md:mb-4">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 md:h-5 md:w-5 fill-amber-400 text-amber-400" />
+                <Star key={i} className="h-3 w-3 md:h-5 md:w-5 fill-amber-400 text-amber-400" />
               ))}
             </div>
-            <p className="text-foreground mb-3 md:mb-4 italic text-sm md:text-base">"{t.text}"</p>
-            <div className="flex items-center gap-2.5 md:gap-3">
-              <div className="h-8 w-8 md:h-10 md:w-10 rounded-full bg-primary/20 flex items-center justify-center text-xs md:text-sm font-bold text-primary">
+            <p className="text-foreground mb-2.5 md:mb-4 italic text-[0.72rem] md:text-base leading-snug">"{t.text}"</p>
+            <div className="flex items-center gap-2 md:gap-3">
+              <div className="h-7 w-7 md:h-10 md:w-10 rounded-full bg-primary/20 flex items-center justify-center text-[10px] md:text-sm font-bold text-primary shrink-0">
                 {t.name[0]}
               </div>
-              <span className="font-heading font-semibold text-sm md:text-base">{t.name}</span>
+              <span className="font-heading font-semibold text-[0.72rem] md:text-base">{t.name}</span>
             </div>
           </div>
         ))}
