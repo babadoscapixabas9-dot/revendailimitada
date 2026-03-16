@@ -175,12 +175,12 @@ const Benefits = () => (
 
 /* ─── Para quem é ─── */
 const ForWho = () => (
-  <section className="px-4 py-14 md:py-28">
-    <div className="mx-auto max-w-3xl glass rounded-xl md:rounded-2xl p-6 md:p-12">
-      <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-10">
+  <section className="px-5 py-12 md:py-28">
+    <div className="mx-auto max-w-3xl glass rounded-xl md:rounded-2xl p-5 md:p-12">
+      <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-5 md:mb-10">
         Para <span className="text-primary">Quem É</span>
       </h2>
-      <div className="space-y-3 md:space-y-4">
+      <div className="space-y-2.5 md:space-y-4">
         {[
           "Afiliados que querem um produto de alta margem",
           "Donos de páginas no Instagram",
@@ -188,11 +188,11 @@ const ForWho = () => (
           "Quem trabalha com marketing digital",
           "Quem quer revender produtos digitais",
         ].map((item) => (
-          <div key={item} className="flex items-center gap-3 md:gap-4">
-            <div className="flex h-6 w-6 md:h-7 md:w-7 shrink-0 items-center justify-center rounded-full bg-primary/20">
-              <Check className="h-3.5 w-3.5 md:h-4 md:w-4 text-primary" />
+          <div key={item} className="flex items-center gap-2.5 md:gap-4">
+            <div className="flex h-5 w-5 md:h-7 md:w-7 shrink-0 items-center justify-center rounded-full bg-primary/20">
+              <Check className="h-3 w-3 md:h-4 md:w-4 text-primary" />
             </div>
-            <span className="text-foreground text-sm md:text-lg">{item}</span>
+            <span className="text-foreground text-[0.8rem] md:text-lg">{item}</span>
           </div>
         ))}
       </div>
