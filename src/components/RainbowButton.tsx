@@ -9,7 +9,7 @@ interface RainbowButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 export const RainbowButton = React.forwardRef<HTMLButtonElement, RainbowButtonProps>(
   ({ children, className, ...props }, ref) => {
     return (
-      <div className="relative inline-flex group">
+      <div className="relative inline-flex group w-full sm:w-auto">
         <div
           className="absolute -inset-[2px] rounded-xl opacity-70 group-hover:opacity-100 transition-opacity duration-300 blur-[2px]"
           style={{
