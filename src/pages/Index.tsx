@@ -10,7 +10,7 @@ import {
 import logo from "@/assets/logo.png";
 import { SaleNotification } from "@/components/SaleNotification";
 
-const CTA_URL = "#";
+const CTA_URL = "https://pay.cakto.com.br/9vn97pp_807302";
 
 /* ─── Hero ─── */
 const Hero = () => (
