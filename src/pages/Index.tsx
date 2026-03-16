@@ -53,7 +53,7 @@ const Hero = () => (
         ))}
       </div>
 
-      <a href={CTA_URL}>
+      <a href="#oferta">
         <RainbowButton className="text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-5 font-heading font-bold">
           Quero me tornar revendedor <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
         </RainbowButton>
