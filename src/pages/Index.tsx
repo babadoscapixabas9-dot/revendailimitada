@@ -60,23 +60,23 @@ const Hero = () => (
       </a>
 
       {/* Dashboard mockup */}
-      <div className="mt-16 mx-auto max-w-3xl glass rounded-2xl p-6 md:p-8">
+      <div className="mt-16 mx-auto max-w-3xl glass rounded-2xl p-6 md:p-8 animate-fade-in opacity-0" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
         <div className="grid grid-cols-3 gap-4 mb-6">
           {[
-            { label: "Chaves Ativas", value: "24" },
-            { label: "Receita Total", value: "R$3.528" },
-            { label: "Lucro Líquido", value: "R$2.570" },
+            { label: "Chaves Ativas", value: "24", delay: "0.5s" },
+            { label: "Receita Total", value: "R$3.528", delay: "0.7s" },
+            { label: "Lucro Líquido", value: "R$2.570", delay: "0.9s" },
           ].map((s) => (
-            <div key={s.label} className="glass-card rounded-xl p-4 text-center">
+            <div key={s.label} className="glass-card rounded-xl p-4 text-center animate-counter-up opacity-0" style={{ animationDelay: s.delay, animationFillMode: 'forwards' }}>
               <p className="text-sm text-muted-foreground">{s.label}</p>
               <p className="text-2xl font-heading font-bold text-primary mt-1">{s.value}</p>
             </div>
           ))}
         </div>
         <div className="h-2 w-full rounded-full bg-border overflow-hidden">
-          <div className="h-full w-3/4 rounded-full bg-gradient-to-r from-primary to-accent" />
+          <div className="h-full rounded-full bg-gradient-to-r from-primary to-accent animate-progress-bar" />
         </div>
-        <p className="text-xs text-muted-foreground mt-2 text-right">75% da meta mensal</p>
+        <p className="text-xs text-muted-foreground mt-2 text-right animate-fade-in opacity-0" style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}>75% da meta mensal</p>
       </div>
     </div>
   </section>

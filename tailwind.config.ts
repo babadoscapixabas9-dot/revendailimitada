@@ -101,6 +101,7 @@ export default {
         "counter-up": "counter-up 0.6s ease-out forwards",
         "fade-in": "fade-in 0.6s ease-out forwards",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "progress-bar": "progress-bar 1.2s ease-out 1s forwards",
       },
     },
   },
