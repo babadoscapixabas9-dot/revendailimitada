@@ -239,21 +239,21 @@ const SocialProof = () => (
 
 /* ─── Oferta ─── */
 const Offer = () => (
-  <section id="oferta" className="px-4 py-14 md:py-28 scroll-mt-4">
-    <div className="mx-auto max-w-2xl text-center glass rounded-2xl md:rounded-3xl p-6 sm:p-10 md:p-16 border border-primary/20">
-      <span className="inline-block rounded-full bg-primary/10 border border-primary/30 px-3 md:px-4 py-1 text-xs md:text-sm font-semibold text-primary mb-4 md:mb-6">
+  <section id="oferta" className="px-5 py-12 md:py-28 scroll-mt-4">
+    <div className="mx-auto max-w-2xl text-center glass rounded-2xl md:rounded-3xl p-5 sm:p-10 md:p-16 border border-primary/20">
+      <span className="inline-block rounded-full bg-primary/10 border border-primary/30 px-3 md:px-4 py-1 text-[0.7rem] md:text-sm font-semibold text-primary mb-3 md:mb-6">
         Oferta Especial
       </span>
-      <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 px-2">
+      <h2 className="font-heading text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2.5 md:mb-4">
         Acesso ao Painel de Revenda + Grupo de Suporte
       </h2>
-      <div className="my-5 md:my-8">
-        <span className="text-lg md:text-2xl text-muted-foreground line-through">R$49,90</span>
-        <span className="block text-5xl sm:text-6xl md:text-7xl font-heading font-extrabold text-primary mt-1.5 md:mt-2">R$9,90</span>
-        <span className="text-muted-foreground text-xs md:text-sm">pagamento único • acesso vitalício</span>
+      <div className="my-4 md:my-8">
+        <span className="text-base md:text-2xl text-muted-foreground line-through">R$49,90</span>
+        <span className="block text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold text-primary mt-1 md:mt-2">R$9,90</span>
+        <span className="text-muted-foreground text-[0.7rem] md:text-sm">pagamento único • acesso vitalício</span>
       </div>
       <a href={CTA_URL}>
-        <RainbowButton className="text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-3.5 sm:py-4 md:py-5 font-heading font-bold">
+        <RainbowButton className="w-full sm:w-auto text-[0.8rem] sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 font-heading font-bold">
           Quero garantir meu acesso <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
         </RainbowButton>
       </a>
