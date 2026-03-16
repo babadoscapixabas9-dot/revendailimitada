@@ -314,7 +314,7 @@ const FinalCTA = () => (
 
 /* ─── Footer ─── */
 const Footer = () => (
-  <footer className="border-t border-border px-4 py-6 md:py-8 text-center text-xs md:text-sm text-muted-foreground">
+  <footer className="border-t border-border px-5 py-5 md:py-8 text-center text-[0.7rem] md:text-sm text-muted-foreground">
     <p>© {new Date().getFullYear()} Extensão Ilimitada. Todos os direitos reservados.</p>
   </footer>
 );
