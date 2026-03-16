@@ -73,7 +73,14 @@ const Hero = () => (
           ))}
         </div>
         <div className="h-1.5 md:h-2 w-full rounded-full bg-border overflow-hidden">
-          <div className="h-full rounded-full bg-gradient-to-r from-primary to-accent animate-progress-bar" />
+          <div
+            className="h-full rounded-full animate-progress-bar"
+            style={{
+              background: "linear-gradient(90deg, #ff0000, #ff4500, #ff6347, #ff0000, #ff4500)",
+              backgroundSize: "300% 100%",
+              animation: "progress-bar 1.2s ease-out 1s forwards, rainbow 4s linear 2.2s infinite",
+            }}
+          />
         </div>
         <p className="text-[10px] md:text-xs text-muted-foreground mt-1.5 md:mt-2 text-right animate-fade-in opacity-0" style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}>75% da meta mensal</p>
       </div>
