@@ -20,6 +20,8 @@ const Hero = () => (
     <div className="absolute top-10 right-1/4 w-[300px] h-[300px] rounded-full bg-[hsl(0_80%_50%/0.04)] blur-[100px] pointer-events-none" />
 
     <div className="relative mx-auto max-w-5xl text-center">
+      <img src={logo} alt="Ilimitado" className="h-16 md:h-20 mx-auto mb-8" />
+
       <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
         <Zap className="h-4 w-4" /> Oportunidade Exclusiva
       </span>
