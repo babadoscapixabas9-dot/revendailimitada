@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import logo from "@/assets/logo.png";
+import { SaleNotification } from "@/components/SaleNotification";
 
 const CTA_URL = "#";
 
@@ -323,6 +324,7 @@ const Footer = () => (
 /* ─── Page ─── */
 const Index = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
+    <SaleNotification />
     <Hero />
     <HowItWorks />
     <Benefits />
