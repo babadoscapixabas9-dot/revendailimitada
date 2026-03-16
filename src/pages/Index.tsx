@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/accordion";
 import logo from "@/assets/logo.png";
 import { SaleNotification } from "@/components/SaleNotification";
-import { HeroNotifications } from "@/components/HeroNotifications";
 
 const CTA_URL = "#";
 
@@ -21,7 +20,6 @@ const Hero = () => (
     <div className="absolute top-20 left-1/3 w-[250px] md:w-[400px] h-[250px] md:h-[400px] rounded-full bg-[hsl(16_90%_50%/0.06)] blur-[80px] md:blur-[120px] pointer-events-none" />
 
     <div className="relative mx-auto max-w-5xl text-center">
-      <HeroNotifications />
       <img src={logo} alt="Ilimitado" className="h-9 md:h-14 mx-auto mb-6 md:mb-8" />
 
 
