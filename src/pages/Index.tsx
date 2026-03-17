@@ -1,5 +1,5 @@
-import { Check, Key, LayoutDashboard, Users, TrendingUp, Star, ArrowRight, ChevronRight, Zap, Infinity, Sparkles, BadgeCheck } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { lazy, Suspense } from "react";
+import { Check, Key, LayoutDashboard, Users, TrendingUp, Star, ArrowRight, ChevronRight, Infinity, Sparkles, BadgeCheck } from "lucide-react";
 import { RainbowButton } from "@/components/RainbowButton";
 import {
   Accordion,
@@ -8,7 +8,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import logo from "@/assets/logo.png";
-import { SaleNotification } from "@/components/SaleNotification";
+
+const SaleNotification = lazy(() => import("@/components/SaleNotification").then(m => ({ default: m.SaleNotification })));
 
 const CTA_URL = "https://pay.cakto.com.br/9vn97pp_807302";
 
