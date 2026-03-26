@@ -30,7 +30,7 @@ const Hero = () => (
 
       <p className="mx-auto max-w-2xl text-[0.9rem] leading-relaxed md:text-xl text-muted-foreground mb-5 md:mb-8">
         Com apenas <strong className="text-foreground">R$19,90</strong> você recebe acesso ao painel de revenda + grupo de suporte e pode comprar chaves vitalícias por{" "}
-        <strong className="text-foreground">R$59,90</strong> para revender por até{" "}
+        <strong className="text-foreground">R$49,90</strong> para revender por até{" "}
         <strong className="text-primary">R$147</strong>.
       </p>
 
@@ -130,7 +130,7 @@ const HowItWorks = () => (
       <div className="space-y-3 md:space-y-0 md:grid md:grid-cols-3 md:gap-4 mb-8 md:mb-16">
         {[
           { step: "01", title: "Compre o Acesso", desc: "Adquira o painel de revenda por apenas R$19,90", icon: LayoutDashboard },
-          { step: "02", title: "Compre Chaves", desc: "Dentro do painel, compre chaves vitalícias por R$59,90", icon: Key },
+          { step: "02", title: "Compre Chaves", desc: "Dentro do painel, compre chaves vitalícias por R$49,90", icon: Key },
           { step: "03", title: "Revenda e Lucre", desc: "Revenda cada chave por até R$147 e fique com todo o lucro", icon: TrendingUp },
         ].map((s, i) => (
           <div key={s.step} className="relative">
