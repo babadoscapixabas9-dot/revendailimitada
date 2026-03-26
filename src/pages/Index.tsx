@@ -332,7 +332,7 @@ const FinalCTA = () => (
         <span className="text-primary">lucrar online</span>
       </h2>
       <p className="text-muted-foreground text-[0.85rem] md:text-lg mb-6 md:mb-10 max-w-xl mx-auto">
-        Por apenas R$19,90 você acessa o painel, compra chaves e começa a faturar imediatamente., compra chaves e começa a faturar imediatamente.
+        Por apenas R$9,90 você acessa o painel, compra chaves e começa a faturar imediatamente.
       </p>
       <a href={CTA_URL}>
         <RainbowButton className="w-full sm:w-auto text-[0.8rem] sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 font-heading font-bold">
