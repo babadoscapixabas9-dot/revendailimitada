@@ -280,7 +280,7 @@ const Offer = () => (
       </h2>
       <div className="my-4 md:my-8">
         <span className="text-base md:text-2xl text-muted-foreground line-through">R$49,90</span>
-        <span className="block text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold text-primary mt-1 md:mt-2">R$19,90</span>
+        <span className="block text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold text-primary mt-1 md:mt-2">R$9,90</span>
         <span className="text-muted-foreground text-[0.7rem] md:text-sm">pagamento único • acesso vitalício</span>
       </div>
       <a href={CTA_URL}>
