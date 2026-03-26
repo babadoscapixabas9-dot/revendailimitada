@@ -29,7 +29,7 @@ const Hero = () => (
       </h1>
 
       <p className="mx-auto max-w-2xl text-[0.9rem] leading-relaxed md:text-xl text-muted-foreground mb-5 md:mb-8">
-        Com apenas <strong className="text-foreground">R$9,90</strong> você recebe acesso ao painel de revenda + grupo de suporte e pode comprar chaves vitalícias por{" "}
+        Com apenas <strong className="text-foreground">R$19,90</strong> você recebe acesso ao painel de revenda + grupo de suporte e pode comprar chaves vitalícias por{" "}
         <strong className="text-foreground">R$39,90</strong> para revender por até{" "}
         <strong className="text-primary">R$147</strong>.
       </p>
@@ -129,7 +129,7 @@ const HowItWorks = () => (
 
       <div className="space-y-3 md:space-y-0 md:grid md:grid-cols-3 md:gap-4 mb-8 md:mb-16">
         {[
-          { step: "01", title: "Compre o Acesso", desc: "Adquira o painel de revenda por apenas R$9,90", icon: LayoutDashboard },
+          { step: "01", title: "Compre o Acesso", desc: "Adquira o painel de revenda por apenas R$19,90", icon: LayoutDashboard },
           { step: "02", title: "Compre Chaves", desc: "Dentro do painel, compre chaves vitalícias por R$39,90", icon: Key },
           { step: "03", title: "Revenda e Lucre", desc: "Revenda cada chave por até R$147 e fique com todo o lucro", icon: TrendingUp },
         ].map((s, i) => (
@@ -235,7 +235,7 @@ const ForWho = () => (
 const testimonials = [
   { name: "Lucas M.", text: "Comprei o painel e no primeiro dia já vendi 3 chaves. Já pagou o investimento várias vezes." },
   { name: "Ana P.", text: "Incrível como é fácil vender, a margem é muito alta. Super recomendo!" },
-  { name: "Rafael S.", text: "Faço vendas todos os dias. Melhor investimento de R$9,90 que já fiz." },
+  { name: "Rafael S.", text: "Faço vendas todos os dias. Melhor investimento de R$19,90 que já fiz." },
   { name: "Camila R.", text: "Nunca pensei que revender poderia ser tão simples. O suporte ajuda muito!" },
 ];
 
@@ -280,7 +280,7 @@ const Offer = () => (
       </h2>
       <div className="my-4 md:my-8">
         <span className="text-base md:text-2xl text-muted-foreground line-through">R$49,90</span>
-        <span className="block text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold text-primary mt-1 md:mt-2">R$9,90</span>
+        <span className="block text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold text-primary mt-1 md:mt-2">R$19,90</span>
         <span className="text-muted-foreground text-[0.7rem] md:text-sm">pagamento único • acesso vitalício</span>
       </div>
       <a href={CTA_URL}>
@@ -332,11 +332,11 @@ const FinalCTA = () => (
         <span className="text-primary">lucrar online</span>
       </h2>
       <p className="text-muted-foreground text-[0.85rem] md:text-lg mb-6 md:mb-10 max-w-xl mx-auto">
-        Por apenas R$9,90 você acessa o painel, compra chaves e começa a faturar imediatamente.
+        Por apenas R$19,90 você acessa o painel, compra chaves e começa a faturar imediatamente., compra chaves e começa a faturar imediatamente.
       </p>
       <a href={CTA_URL}>
         <RainbowButton className="w-full sm:w-auto text-[0.8rem] sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 font-heading font-bold">
-          Quero acesso ao painel por R$9,90 <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
+          Quero acesso ao painel por R$19,90 <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" /> <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
         </RainbowButton>
       </a>
     </div>
