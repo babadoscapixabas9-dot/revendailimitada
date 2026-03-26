@@ -160,14 +160,14 @@ const HowItWorks = () => (
         </h3>
         <div className="grid grid-cols-3 gap-2 md:gap-6">
           {[
-            { keys: 5, revenue: "R$735" },
-            { keys: 10, revenue: "R$1.470" },
-            { keys: 20, revenue: "R$2.940" },
+            { keys: 5, revenue: "R$475" },
+            { keys: 10, revenue: "R$961" },
+            { keys: 20, revenue: "R$1.932" },
           ].map((p) => (
             <div key={p.keys} className="glass-card rounded-lg md:rounded-xl p-2.5 md:p-6 text-center">
               <p className="text-[9px] md:text-sm text-muted-foreground mb-0.5 md:mb-1">Venda {p.keys} chaves</p>
               <p className="text-lg sm:text-2xl md:text-4xl font-heading font-extrabold text-primary">{p.revenue}</p>
-              <p className="text-[9px] md:text-xs text-muted-foreground mt-0.5 md:mt-1">de receita bruta</p>
+              <p className="text-[9px] md:text-xs text-muted-foreground mt-0.5 md:mt-1">de lucro líquido</p>
             </div>
           ))}
         </div>
