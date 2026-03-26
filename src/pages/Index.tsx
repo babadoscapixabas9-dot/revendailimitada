@@ -336,7 +336,7 @@ const FinalCTA = () => (
       </p>
       <a href={CTA_URL}>
         <RainbowButton className="w-full sm:w-auto text-[0.8rem] sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 font-heading font-bold">
-          Quero acesso ao painel por R$9,90 <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
+          Quero acesso ao painel por R$19,90 <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" /> <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
         </RainbowButton>
       </a>
     </div>
