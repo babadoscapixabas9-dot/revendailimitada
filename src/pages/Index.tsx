@@ -30,7 +30,7 @@ const Hero = () => (
 
       <p className="mx-auto max-w-2xl text-[0.9rem] leading-relaxed md:text-xl text-muted-foreground mb-5 md:mb-8">
         Com apenas <strong className="text-foreground">R$19,90</strong> você recebe acesso ao painel de revenda + grupo de suporte e pode comprar chaves vitalícias por{" "}
-        <strong className="text-foreground">R$59,90</strong> para revender por até{" "}
+        <strong className="text-foreground">R$49,90</strong> para revender por até{" "}
         <strong className="text-primary">R$147</strong>.
       </p>
 
