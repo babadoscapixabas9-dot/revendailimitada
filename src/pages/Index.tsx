@@ -235,7 +235,7 @@ const ForWho = () => (
 const testimonials = [
   { name: "Lucas M.", text: "Comprei o painel e no primeiro dia já vendi 3 chaves. Já pagou o investimento várias vezes." },
   { name: "Ana P.", text: "Incrível como é fácil vender, a margem é muito alta. Super recomendo!" },
-  { name: "Rafael S.", text: "Faço vendas todos os dias. { name: "Rafael S.", text: "Faço vendas todos os dias. Melhor investimento de R$19,90 que já fiz." }," },
+  { name: "Rafael S.", text: "Faço vendas todos os dias. Melhor investimento de R$19,90 que já fiz." },
   { name: "Camila R.", text: "Nunca pensei que revender poderia ser tão simples. O suporte ajuda muito!" },
 ];
 
