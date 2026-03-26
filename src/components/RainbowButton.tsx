@@ -13,7 +13,7 @@ export const RainbowButton = React.forwardRef<HTMLButtonElement, RainbowButtonPr
         <div
           className="absolute -inset-[2px] rounded-xl opacity-70 group-hover:opacity-100 transition-opacity duration-300 blur-[2px]"
           style={{
-            background: "linear-gradient(90deg, #ff0000, #ff4500, #ff6347, #ff0000, #ff4500)",
+            background: "linear-gradient(90deg, #22c55e, #16a34a, #4ade80, #22c55e, #16a34a)",
             backgroundSize: "300% 100%",
             animation: "rainbow 4s linear infinite",
           }}
