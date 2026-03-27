@@ -16,26 +16,10 @@ const CTA_URL = "https://pay.cakto.com.br/9vn97pp_807302";
 /* ─── Hero ─── */
 const Hero = () => (
   <section className="relative overflow-hidden px-5 pt-12 pb-10 md:pt-32 md:pb-24">
-    {/* Animated particle grid */}
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'radial-gradient(hsl(258 85% 55%) 1px, transparent 1px)',
-        backgroundSize: '40px 40px',
-        animation: 'grid-drift 20s linear infinite',
-      }} />
-    </div>
-
     {/* Animated background glows */}
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[250px] md:w-[800px] h-[200px] md:h-[600px] rounded-full bg-primary/8 blur-[60px] md:blur-[160px] pointer-events-none will-change-transform animate-hero-glow-1" />
     <div className="absolute top-20 left-1/3 w-[120px] md:w-[400px] h-[120px] md:h-[400px] rounded-full bg-[hsl(258_85%_55%/0.06)] blur-[40px] md:blur-[120px] pointer-events-none will-change-transform animate-hero-glow-2" />
     <div className="absolute -top-10 right-1/4 w-[100px] md:w-[300px] h-[100px] md:h-[300px] rounded-full bg-accent/5 blur-[50px] md:blur-[120px] pointer-events-none will-change-transform animate-hero-glow-3" />
-
-    {/* Rising particles */}
-    <div className="absolute bottom-0 left-[10%] w-1 h-1 rounded-full bg-primary/20 animate-[float-up_6s_ease-in_infinite]" />
-    <div className="absolute bottom-0 left-[30%] w-1.5 h-1.5 rounded-full bg-primary/15 animate-[float-up_8s_ease-in_2s_infinite]" />
-    <div className="absolute bottom-0 left-[50%] w-1 h-1 rounded-full bg-accent/20 animate-[float-up_7s_ease-in_1s_infinite]" />
-    <div className="absolute bottom-0 left-[70%] w-1.5 h-1.5 rounded-full bg-primary/10 animate-[float-up_9s_ease-in_3s_infinite]" />
-    <div className="absolute bottom-0 left-[90%] w-1 h-1 rounded-full bg-accent/15 animate-[float-up_6.5s_ease-in_4s_infinite]" />
 
     <div className="relative mx-auto max-w-5xl text-center">
       <img src={logo} alt="Ilimitado" className="h-8 md:h-14 w-auto mx-auto mb-5 md:mb-8 object-contain" loading="eager" fetchPriority="high" />
