@@ -127,6 +127,8 @@ export default {
         "hero-glow-1": "hero-glow-1 6s ease-in-out infinite",
         "hero-glow-2": "hero-glow-2 8s ease-in-out infinite",
         "hero-glow-3": "hero-glow-3 7s ease-in-out infinite",
+        "hero-glow-4": "hero-glow-4 9s ease-in-out infinite",
+        "hero-glow-5": "hero-glow-5 10s ease-in-out infinite",
       },
     },
   },
