@@ -8,7 +8,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import logo from "@/assets/logo.png";
-import heroBg from "@/assets/hero-bg.png";
 
 const SaleNotification = lazy(() => import("@/components/SaleNotification").then(m => ({ default: m.SaleNotification })));
 
@@ -17,8 +16,6 @@ const CTA_URL = "https://pay.cakto.com.br/9vn97pp_807302";
 /* ─── Hero ─── */
 const Hero = () => (
   <section className="relative overflow-hidden px-5 pt-12 pb-10 md:pt-32 md:pb-24">
-    {/* Hero background image */}
-    <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none" aria-hidden="true" />
     {/* Animated background glows */}
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[250px] md:w-[800px] h-[200px] md:h-[600px] rounded-full bg-primary/8 blur-[60px] md:blur-[160px] pointer-events-none will-change-transform animate-hero-glow-1" />
     <div className="absolute top-20 left-1/3 w-[120px] md:w-[400px] h-[120px] md:h-[400px] rounded-full bg-[hsl(258_85%_55%/0.06)] blur-[40px] md:blur-[120px] pointer-events-none will-change-transform animate-hero-glow-2" />
