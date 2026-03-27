@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import logo from "@/assets/logo.png";
+import heroBg from "@/assets/hero-bg.png";
 
 const SaleNotification = lazy(() => import("@/components/SaleNotification").then(m => ({ default: m.SaleNotification })));
 
