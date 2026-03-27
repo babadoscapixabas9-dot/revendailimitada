@@ -89,6 +89,55 @@ const Hero = () => (
   </section>
 );
 
+/* ─── Carousel ─── */
+const carouselImages = [carouselImg1];
+
+const ImageCarousel = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+    onSelect();
+    api.on("select", onSelect);
+    return () => { api.off("select", onSelect); };
+  }, [api, onSelect]);
+
+  return (
+    <section className="px-5 py-10 md:py-20">
+      <div className="mx-auto max-w-4xl">
+        <Carousel setApi={setApi} opts={{ loop: true }} className="relative">
+          <CarouselContent>
+            {carouselImages.map((img, i) => (
+              <CarouselItem key={i}>
+                <div className="glass rounded-xl md:rounded-2xl overflow-hidden">
+                  <img src={img} alt={`Slide ${i + 1}`} className="w-full h-auto object-contain" loading="lazy" />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          {carouselImages.length > 1 && (
+            <>
+              <CarouselPrevious className="hidden md:flex -left-14 border-primary/30 text-primary hover:bg-primary/10" />
+              <CarouselNext className="hidden md:flex -right-14 border-primary/30 text-primary hover:bg-primary/10" />
+              <div className="flex justify-center gap-2 mt-4">
+                {carouselImages.map((_, i) => (
+                  <button key={i} className={`h-2 rounded-full transition-all ${i === current ? 'w-6 bg-primary' : 'w-2 bg-muted-foreground/30'}`} onClick={() => api?.scrollTo(i)} />
+                ))}
+              </div>
+            </>
+          )}
+        </Carousel>
+      </div>
+    </section>
+  );
+};
+
 /* ─── O Que a Extensão Faz ─── */
 const WhatItDoes = () => (
   <section className="px-5 py-12 md:py-28">
