@@ -94,6 +94,19 @@ export default {
           from: { width: "0%" },
           to: { width: "75%" },
         },
+        "hero-glow-1": {
+          "0%, 100%": { transform: "translateX(-50%) scale(1)", opacity: "0.6" },
+          "50%": { transform: "translateX(-45%) scale(1.15)", opacity: "1" },
+        },
+        "hero-glow-2": {
+          "0%, 100%": { transform: "translateY(0) scale(1)", opacity: "0.5" },
+          "33%": { transform: "translateY(-20px) scale(1.1)", opacity: "0.8" },
+          "66%": { transform: "translateY(10px) scale(0.95)", opacity: "0.6" },
+        },
+        "hero-glow-3": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)", opacity: "0.4" },
+          "50%": { transform: "translate(30px, 20px) scale(1.2)", opacity: "0.7" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
