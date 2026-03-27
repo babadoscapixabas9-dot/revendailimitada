@@ -18,7 +18,7 @@ const Hero = () => (
   <section className="relative overflow-hidden px-5 pt-12 pb-10 md:pt-32 md:pb-24">
     {/* Animated background glows */}
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[250px] md:w-[800px] h-[200px] md:h-[600px] rounded-full bg-primary/8 blur-[60px] md:blur-[160px] pointer-events-none will-change-transform animate-hero-glow-1" />
-    <div className="absolute top-20 left-1/3 w-[120px] md:w-[400px] h-[120px] md:h-[400px] rounded-full bg-[hsl(258_85%_55%/0.06)] blur-[40px] md:blur-[120px] pointer-events-none will-change-transform animate-hero-glow-2" />
+    <div className="absolute top-20 left-1/3 w-[120px] md:w-[400px] h-[120px] md:h-[400px] rounded-full bg-[hsl(142_76%_45%/0.06)] blur-[40px] md:blur-[120px] pointer-events-none will-change-transform animate-hero-glow-2" />
     <div className="absolute -top-10 right-1/4 w-[100px] md:w-[300px] h-[100px] md:h-[300px] rounded-full bg-accent/5 blur-[50px] md:blur-[120px] pointer-events-none will-change-transform animate-hero-glow-3" />
 
     <div className="relative mx-auto max-w-5xl text-center">
@@ -75,7 +75,7 @@ const Hero = () => (
           <div
             className="h-full rounded-full animate-progress-bar"
             style={{
-              background: "linear-gradient(90deg, #7c3aed, #8b5cf6, #a855f7, #7c3aed, #8b5cf6)",
+              background: "linear-gradient(90deg, #16a34a, #22c55e, #4ade80, #16a34a, #22c55e)",
               backgroundSize: "300% 100%",
               animation: "progress-bar 1.2s ease-out 1s forwards, rainbow 4s linear 2.2s infinite",
             }}
