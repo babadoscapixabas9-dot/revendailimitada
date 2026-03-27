@@ -17,9 +17,11 @@ const CTA_URL = "https://pay.cakto.com.br/9vn97pp_807302";
 const Hero = () => (
   <section className="relative overflow-hidden px-5 pt-12 pb-10 md:pt-32 md:pb-24">
     {/* Animated background glows */}
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[250px] md:w-[800px] h-[200px] md:h-[600px] rounded-full bg-primary/8 blur-[60px] md:blur-[160px] pointer-events-none will-change-transform animate-hero-glow-1" />
-    <div className="absolute top-20 left-1/3 w-[120px] md:w-[400px] h-[120px] md:h-[400px] rounded-full bg-[hsl(258_85%_55%/0.06)] blur-[40px] md:blur-[120px] pointer-events-none will-change-transform animate-hero-glow-2" />
-    <div className="absolute -top-10 right-1/4 w-[100px] md:w-[300px] h-[100px] md:h-[300px] rounded-full bg-accent/5 blur-[50px] md:blur-[120px] pointer-events-none will-change-transform animate-hero-glow-3" />
+    <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[300px] md:w-[900px] h-[250px] md:h-[700px] rounded-full bg-primary/15 blur-[80px] md:blur-[180px] pointer-events-none will-change-transform animate-hero-glow-1" />
+    <div className="absolute top-[10%] left-[20%] w-[180px] md:w-[500px] h-[180px] md:h-[500px] rounded-full bg-[hsl(258_85%_55%/0.12)] blur-[60px] md:blur-[140px] pointer-events-none will-change-transform animate-hero-glow-2" />
+    <div className="absolute -top-[5%] right-[15%] w-[150px] md:w-[400px] h-[150px] md:h-[400px] rounded-full bg-accent/10 blur-[60px] md:blur-[140px] pointer-events-none will-change-transform animate-hero-glow-3" />
+    <div className="absolute top-[40%] left-[10%] w-[100px] md:w-[300px] h-[100px] md:h-[300px] rounded-full bg-[hsl(270_100%_65%/0.08)] blur-[50px] md:blur-[120px] pointer-events-none will-change-transform animate-hero-glow-4" />
+    <div className="absolute top-[30%] right-[10%] w-[120px] md:w-[350px] h-[120px] md:h-[350px] rounded-full bg-primary/8 blur-[50px] md:blur-[130px] pointer-events-none will-change-transform animate-hero-glow-5" />
 
     <div className="relative mx-auto max-w-5xl text-center">
       <img src={logo} alt="Ilimitado" className="h-8 md:h-14 w-auto mx-auto mb-5 md:mb-8 object-contain" loading="eager" fetchPriority="high" />
