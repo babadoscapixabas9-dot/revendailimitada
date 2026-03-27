@@ -24,9 +24,9 @@ const Hero = () => (
     <div className="relative mx-auto max-w-5xl text-center">
       <img src={logo} alt="Ilimitado" className="h-8 md:h-14 w-auto mx-auto mb-5 md:mb-8 object-contain" loading="eager" fetchPriority="high" />
 
-      <h1 className="font-heading text-[1.55rem] leading-[1.15] font-extrabold tracking-tight sm:text-4xl md:text-6xl lg:text-7xl glow-text mb-3.5 md:mb-6 text-pink-400">
+      <h1 className="font-heading text-[1.55rem] leading-[1.15] font-extrabold tracking-tight sm:text-4xl md:text-6xl lg:text-7xl glow-text mb-3.5 md:mb-6">
         Seja Revendedor da Extensão Ilimitada e{" "}
-        <span className="text-pink-300">Lucre Todos os Dias</span>
+        <span className="text-primary">Lucre Todos os Dias</span>
       </h1>
 
       <p className="mx-auto max-w-2xl text-[0.9rem] leading-relaxed md:text-xl text-muted-foreground mb-5 md:mb-8">
