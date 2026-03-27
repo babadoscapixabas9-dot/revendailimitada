@@ -64,11 +64,11 @@
 
 @layer utilities {
   .glow-primary {
-    box-shadow: 0 0 30px hsl(258 85% 55% / 0.3), 0 0 60px hsl(258 85% 55% / 0.1);
+    box-shadow: 0 0 30px hsl(142 76% 45% / 0.3), 0 0 60px hsl(142 76% 45% / 0.1);
   }
 
   .glow-text {
-    text-shadow: 0 0 40px hsl(258 85% 55% / 0.3);
+    text-shadow: 0 0 40px hsl(142 76% 45% / 0.3);
   }
 
   .glass {
