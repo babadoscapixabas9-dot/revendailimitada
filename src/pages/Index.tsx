@@ -407,6 +407,7 @@ const Index = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
     <Suspense fallback={null}><SaleNotification /></Suspense>
     <Hero />
+    <ImageCarousel />
     <WhatItDoes />
     <HowItWorks />
     <Benefits />
