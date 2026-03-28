@@ -63,7 +63,7 @@
 
 @layer utilities {
   .glow-primary {
-    box-shadow: 0 0 30px hsl(258 85% 55% / 0.3), 0 0 60px hsl(258 85% 55% / 0.1);
+    box-shadow: 0 0 30px hsl(24 95% 53% / 0.3), 0 0 60px hsl(24 95% 53% / 0.1);
   }
 
   .glow-text {
