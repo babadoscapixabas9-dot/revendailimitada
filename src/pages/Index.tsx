@@ -75,7 +75,7 @@ const Hero = () => (
           <div
             className="h-full rounded-full animate-progress-bar"
             style={{
-              background: "linear-gradient(90deg, #7c3aed, #8b5cf6, #a855f7, #7c3aed, #8b5cf6)",
+              background: "linear-gradient(90deg, #ea580c, #f97316, #fb923c, #ea580c, #f97316)",
               backgroundSize: "300% 100%",
               animation: "progress-bar 1.2s ease-out 1s forwards, rainbow 4s linear 2.2s infinite",
             }}
