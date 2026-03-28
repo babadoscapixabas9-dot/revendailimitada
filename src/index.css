@@ -15,7 +15,7 @@
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 96%;
 
-    --primary: 258 85% 55%;
+    --primary: 24 95% 53%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 12%;
@@ -24,7 +24,7 @@
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 270 100% 65%;
+    --accent: 16 90% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -32,11 +32,11 @@
 
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 258 85% 55%;
+    --ring: 24 95% 53%;
 
     --radius: 0.75rem;
 
-    --violet: 258 90% 66%;
+    --violet: 24 95% 60%;
     --surface: 0 0% 8%;
   }
 
@@ -63,11 +63,11 @@
 
 @layer utilities {
   .glow-primary {
-    box-shadow: 0 0 30px hsl(258 85% 55% / 0.3), 0 0 60px hsl(258 85% 55% / 0.1);
+    box-shadow: 0 0 30px hsl(24 95% 53% / 0.3), 0 0 60px hsl(24 95% 53% / 0.1);
   }
 
   .glow-text {
-    text-shadow: 0 0 40px hsl(258 85% 55% / 0.3);
+    text-shadow: 0 0 40px hsl(24 95% 53% / 0.3);
   }
 
   .glass {
