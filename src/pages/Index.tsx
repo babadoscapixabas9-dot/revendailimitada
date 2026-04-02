@@ -191,9 +191,11 @@ const HowItWorks = () => (
 const Benefits = () => (
   <section className="px-5 py-12 md:py-28">
     <div className="mx-auto max-w-5xl">
-      <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
-        O Que Você <span className="text-primary">Recebe</span>
-      </h2>
+      <ScrollReveal>
+        <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
+          O Que Você <span className="text-primary">Recebe</span>
+        </h2>
+      </ScrollReveal>
 
       <div className="grid grid-cols-2 gap-2.5 md:gap-6">
         {[
@@ -201,14 +203,16 @@ const Benefits = () => (
           { icon: Key, title: "Chaves Vitalícias", desc: "Produto com alto valor percebido" },
           { icon: Users, title: "Grupo de Suporte", desc: "Comunidade + suporte para ajudar nas vendas" },
           { icon: TrendingUp, title: "Produto com Alta Demanda", desc: "Ferramenta útil que vende fácil" },
-        ].map((b) => (
-          <div key={b.title} className="glass-card rounded-xl md:rounded-2xl p-4 md:p-8 hover:border-primary/30 transition-colors">
-            <div className="inline-flex h-9 w-9 md:h-12 md:w-12 items-center justify-center rounded-lg md:rounded-xl bg-primary/10 border border-primary/20 mb-2.5 md:mb-4">
-              <b.icon className="h-4 w-4 md:h-6 md:w-6 text-primary" />
+        ].map((b, i) => (
+          <ScrollReveal key={b.title} delay={i * 100}>
+            <div className="glass-card rounded-xl md:rounded-2xl p-4 md:p-8 hover:border-primary/30 transition-colors h-full">
+              <div className="inline-flex h-9 w-9 md:h-12 md:w-12 items-center justify-center rounded-lg md:rounded-xl bg-primary/10 border border-primary/20 mb-2.5 md:mb-4">
+                <b.icon className="h-4 w-4 md:h-6 md:w-6 text-primary" />
+              </div>
+              <h3 className="font-heading text-[0.8rem] md:text-lg font-bold mb-1 md:mb-2 leading-tight">{b.title}</h3>
+              <p className="text-muted-foreground text-[0.72rem] md:text-sm leading-snug">{b.desc}</p>
             </div>
-            <h3 className="font-heading text-[0.8rem] md:text-lg font-bold mb-1 md:mb-2 leading-tight">{b.title}</h3>
-            <p className="text-muted-foreground text-[0.72rem] md:text-sm leading-snug">{b.desc}</p>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
     </div>
@@ -218,27 +222,29 @@ const Benefits = () => (
 /* ─── Para quem é ─── */
 const ForWho = () => (
   <section className="px-5 py-12 md:py-28">
-    <div className="mx-auto max-w-3xl glass rounded-xl md:rounded-2xl p-5 md:p-12">
-      <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-5 md:mb-10">
-        Para <span className="text-primary">Quem É</span>
-      </h2>
-      <div className="space-y-2.5 md:space-y-4">
-        {[
-          "Afiliados que querem um produto de alta margem",
-          "Donos de páginas no Instagram",
-          "Quem quer renda extra online",
-          "Quem trabalha com marketing digital",
-          "Quem quer revender produtos digitais",
-        ].map((item) => (
-          <div key={item} className="flex items-center gap-2.5 md:gap-4">
-            <div className="flex h-5 w-5 md:h-7 md:w-7 shrink-0 items-center justify-center rounded-full bg-primary/20">
-              <Check className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+    <ScrollReveal>
+      <div className="mx-auto max-w-3xl glass rounded-xl md:rounded-2xl p-5 md:p-12">
+        <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-5 md:mb-10">
+          Para <span className="text-primary">Quem É</span>
+        </h2>
+        <div className="space-y-2.5 md:space-y-4">
+          {[
+            "Afiliados que querem um produto de alta margem",
+            "Donos de páginas no Instagram",
+            "Quem quer renda extra online",
+            "Quem trabalha com marketing digital",
+            "Quem quer revender produtos digitais",
+          ].map((item) => (
+            <div key={item} className="flex items-center gap-2.5 md:gap-4">
+              <div className="flex h-5 w-5 md:h-7 md:w-7 shrink-0 items-center justify-center rounded-full bg-primary/20">
+                <Check className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+              </div>
+              <span className="text-foreground text-[0.8rem] md:text-lg">{item}</span>
             </div>
-            <span className="text-foreground text-[0.8rem] md:text-lg">{item}</span>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </ScrollReveal>
   </section>
 );
 
@@ -253,26 +259,30 @@ const testimonials = [
 const SocialProof = () => (
   <section className="px-5 py-12 md:py-28">
     <div className="mx-auto max-w-5xl">
-      <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
-        O Que Nossos Revendedores <span className="text-primary">Dizem</span>
-      </h2>
+      <ScrollReveal>
+        <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
+          O Que Nossos Revendedores <span className="text-primary">Dizem</span>
+        </h2>
+      </ScrollReveal>
 
       <div className="grid grid-cols-2 gap-2.5 md:gap-6">
-        {testimonials.map((t) => (
-          <div key={t.name} className="glass-card rounded-xl md:rounded-2xl p-3.5 md:p-8">
-            <div className="flex gap-0.5 md:gap-1 mb-2 md:mb-4">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-3 w-3 md:h-5 md:w-5 fill-amber-400 text-amber-400" />
-              ))}
-            </div>
-            <p className="text-foreground mb-2.5 md:mb-4 italic text-[0.72rem] md:text-base leading-snug">"{t.text}"</p>
-            <div className="flex items-center gap-2 md:gap-3">
-              <div className="h-7 w-7 md:h-10 md:w-10 rounded-full bg-primary/20 flex items-center justify-center text-[10px] md:text-sm font-bold text-primary shrink-0">
-                {t.name[0]}
+        {testimonials.map((t, i) => (
+          <ScrollReveal key={t.name} delay={i * 100}>
+            <div className="glass-card rounded-xl md:rounded-2xl p-3.5 md:p-8 h-full">
+              <div className="flex gap-0.5 md:gap-1 mb-2 md:mb-4">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-3 w-3 md:h-5 md:w-5 fill-amber-400 text-amber-400" />
+                ))}
               </div>
-              <span className="font-heading font-semibold text-[0.72rem] md:text-base">{t.name}</span>
+              <p className="text-foreground mb-2.5 md:mb-4 italic text-[0.72rem] md:text-base leading-snug">"{t.text}"</p>
+              <div className="flex items-center gap-2 md:gap-3">
+                <div className="h-7 w-7 md:h-10 md:w-10 rounded-full bg-primary/20 flex items-center justify-center text-[10px] md:text-sm font-bold text-primary shrink-0">
+                  {t.name[0]}
+                </div>
+                <span className="font-heading font-semibold text-[0.72rem] md:text-base">{t.name}</span>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
     </div>
@@ -282,24 +292,26 @@ const SocialProof = () => (
 /* ─── Oferta ─── */
 const Offer = () => (
   <section id="oferta" className="px-5 py-12 md:py-28 scroll-mt-4">
-    <div className="mx-auto max-w-2xl text-center glass rounded-2xl md:rounded-3xl p-5 sm:p-10 md:p-16 border border-primary/20">
-      <span className="inline-block rounded-full bg-primary/10 border border-primary/30 px-3 md:px-4 py-1 text-[0.7rem] md:text-sm font-semibold text-primary mb-3 md:mb-6">
-        Oferta Especial
-      </span>
-      <h2 className="font-heading text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2.5 md:mb-4">
-        Acesso ao Painel de Revenda + Grupo de Suporte
-      </h2>
-      <div className="my-4 md:my-8">
-        <span className="text-base md:text-2xl text-muted-foreground line-through">R$49,90</span>
-        <span className="block text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold text-primary mt-1 md:mt-2">R$9,90</span>
-        <span className="text-muted-foreground text-[0.7rem] md:text-sm">pagamento único • acesso vitalício</span>
+    <ScrollReveal>
+      <div className="mx-auto max-w-2xl text-center glass rounded-2xl md:rounded-3xl p-5 sm:p-10 md:p-16 border border-primary/20">
+        <span className="inline-block rounded-full bg-primary/10 border border-primary/30 px-3 md:px-4 py-1 text-[0.7rem] md:text-sm font-semibold text-primary mb-3 md:mb-6">
+          Oferta Especial
+        </span>
+        <h2 className="font-heading text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2.5 md:mb-4">
+          Acesso ao Painel de Revenda + Grupo de Suporte
+        </h2>
+        <div className="my-4 md:my-8">
+          <span className="text-base md:text-2xl text-muted-foreground line-through">R$49,90</span>
+          <span className="block text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold text-primary mt-1 md:mt-2">R$9,90</span>
+          <span className="text-muted-foreground text-[0.7rem] md:text-sm">pagamento único • acesso vitalício</span>
+        </div>
+        <a href={CTA_URL}>
+          <RainbowButton className="w-full sm:w-auto text-[0.8rem] sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 font-heading font-bold">
+            Quero garantir meu acesso <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
+          </RainbowButton>
+        </a>
       </div>
-      <a href={CTA_URL}>
-        <RainbowButton className="w-full sm:w-auto text-[0.8rem] sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 font-heading font-bold">
-          Quero garantir meu acesso <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
-        </RainbowButton>
-      </a>
-    </div>
+    </ScrollReveal>
   </section>
 );
 
@@ -314,21 +326,25 @@ const faqItems = [
 const FAQ = () => (
   <section className="px-5 py-12 md:py-28">
     <div className="mx-auto max-w-3xl">
-      <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
-        Perguntas <span className="text-primary">Frequentes</span>
-      </h2>
-      <Accordion type="single" collapsible className="space-y-2 md:space-y-3">
-        {faqItems.map((f, i) => (
-          <AccordionItem key={i} value={`faq-${i}`} className="glass-card rounded-lg md:rounded-xl px-3.5 md:px-6 border-none">
-            <AccordionTrigger className="font-heading font-semibold text-left text-[0.8rem] md:text-base hover:no-underline py-3.5 md:py-5">
-              {f.q}
-            </AccordionTrigger>
-            <AccordionContent className="text-muted-foreground text-[0.78rem] md:text-sm pb-3.5 md:pb-5">
-              {f.a}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+      <ScrollReveal>
+        <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
+          Perguntas <span className="text-primary">Frequentes</span>
+        </h2>
+      </ScrollReveal>
+      <ScrollReveal delay={100}>
+        <Accordion type="single" collapsible className="space-y-2 md:space-y-3">
+          {faqItems.map((f, i) => (
+            <AccordionItem key={i} value={`faq-${i}`} className="glass-card rounded-lg md:rounded-xl px-3.5 md:px-6 border-none">
+              <AccordionTrigger className="font-heading font-semibold text-left text-[0.8rem] md:text-base hover:no-underline py-3.5 md:py-5">
+                {f.q}
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground text-[0.78rem] md:text-sm pb-3.5 md:pb-5">
+                {f.a}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </ScrollReveal>
     </div>
   </section>
 );
@@ -337,20 +353,22 @@ const FAQ = () => (
 const FinalCTA = () => (
   <section className="relative px-5 py-12 md:py-28">
     <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
-    <div className="relative mx-auto max-w-3xl text-center">
-      <h2 className="font-heading text-xl sm:text-3xl font-bold md:text-5xl mb-3 md:mb-6">
-        Comece hoje mesmo a revender e{" "}
-        <span className="text-primary">lucrar online</span>
-      </h2>
-      <p className="text-muted-foreground text-[0.85rem] md:text-lg mb-6 md:mb-10 max-w-xl mx-auto">
-        Por apenas R$9,90 você acessa o painel, compra chaves e começa a faturar imediatamente.
-      </p>
-      <a href={CTA_URL}>
-        <RainbowButton className="w-full sm:w-auto text-[0.8rem] sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 font-heading font-bold">
-          Quero acesso ao painel por R$9,90 <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
-        </RainbowButton>
-      </a>
-    </div>
+    <ScrollReveal>
+      <div className="relative mx-auto max-w-3xl text-center">
+        <h2 className="font-heading text-xl sm:text-3xl font-bold md:text-5xl mb-3 md:mb-6">
+          Comece hoje mesmo a revender e{" "}
+          <span className="text-primary">lucrar online</span>
+        </h2>
+        <p className="text-muted-foreground text-[0.85rem] md:text-lg mb-6 md:mb-10 max-w-xl mx-auto">
+          Por apenas R$9,90 você acessa o painel, compra chaves e começa a faturar imediatamente.
+        </p>
+        <a href={CTA_URL}>
+          <RainbowButton className="w-full sm:w-auto text-[0.8rem] sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 font-heading font-bold">
+            Quero acesso ao painel por R$9,90 <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
+          </RainbowButton>
+        </a>
+      </div>
+    </ScrollReveal>
   </section>
 );
 
