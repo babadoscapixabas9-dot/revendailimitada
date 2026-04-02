@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Check, Key, LayoutDashboard, Users, TrendingUp, Star, ArrowRight, ChevronRight, Infinity, Sparkles, BadgeCheck } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { RainbowButton } from "@/components/RainbowButton";
 import {
   Accordion,
