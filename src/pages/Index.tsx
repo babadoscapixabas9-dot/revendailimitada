@@ -126,12 +126,14 @@ const WhatItDoes = () => (
 const HowItWorks = () => (
   <section className="px-5 py-12 md:py-28">
     <div className="mx-auto max-w-5xl">
-      <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-2 md:mb-4">
-        Como <span className="text-primary">Funciona</span>
-      </h2>
-      <p className="text-center text-muted-foreground text-[0.8rem] md:text-base mb-8 md:mb-14 max-w-xl mx-auto">
-        3 passos simples para começar a lucrar hoje mesmo
-      </p>
+      <ScrollReveal>
+        <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-2 md:mb-4">
+          Como <span className="text-primary">Funciona</span>
+        </h2>
+        <p className="text-center text-muted-foreground text-[0.8rem] md:text-base mb-8 md:mb-14 max-w-xl mx-auto">
+          3 passos simples para começar a lucrar hoje mesmo
+        </p>
+      </ScrollReveal>
 
       <div className="space-y-3 md:space-y-0 md:grid md:grid-cols-3 md:gap-4 mb-8 md:mb-16">
         {[
@@ -139,45 +141,48 @@ const HowItWorks = () => (
           { step: "02", title: "Compre Chaves", desc: "Dentro do painel, compre chaves vitalícias por R$49,90", icon: Key },
           { step: "03", title: "Revenda e Lucre", desc: "Revenda cada chave por até R$147 e fique com todo o lucro", icon: TrendingUp },
         ].map((s, i) => (
-          <div key={s.step} className="relative">
-            <div className="glass-card rounded-xl md:rounded-2xl p-4 md:p-8 flex items-center gap-4 md:flex-col md:text-center h-full">
-              <div className="flex h-11 w-11 md:h-14 md:w-14 shrink-0 items-center justify-center rounded-xl md:rounded-2xl bg-primary/10 border border-primary/20">
-                <s.icon className="h-5 w-5 md:h-7 md:w-7 text-primary" />
+          <ScrollReveal key={s.step} delay={i * 150}>
+            <div className="relative">
+              <div className="glass-card rounded-xl md:rounded-2xl p-4 md:p-8 flex items-center gap-4 md:flex-col md:text-center h-full">
+                <div className="flex h-11 w-11 md:h-14 md:w-14 shrink-0 items-center justify-center rounded-xl md:rounded-2xl bg-primary/10 border border-primary/20">
+                  <s.icon className="h-5 w-5 md:h-7 md:w-7 text-primary" />
+                </div>
+                <div className="flex-1 md:flex-none">
+                  <span className="block text-[9px] md:text-xs font-bold text-accent tracking-widest uppercase mb-0.5 md:mb-2">Passo {s.step}</span>
+                  <h3 className="font-heading text-[0.95rem] md:text-xl font-bold mb-0.5 md:mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground text-[0.78rem] md:text-sm leading-snug">{s.desc}</p>
+                </div>
               </div>
-              <div className="flex-1 md:flex-none">
-                <span className="block text-[9px] md:text-xs font-bold text-accent tracking-widest uppercase mb-0.5 md:mb-2">Passo {s.step}</span>
-                <h3 className="font-heading text-[0.95rem] md:text-xl font-bold mb-0.5 md:mb-2">{s.title}</h3>
-                <p className="text-muted-foreground text-[0.78rem] md:text-sm leading-snug">{s.desc}</p>
-              </div>
+              {i < 2 && (
+                <div className="hidden md:flex absolute top-1/2 -right-5 -translate-y-1/2 z-10">
+                  <ChevronRight className="h-8 w-8 text-primary/40" />
+                </div>
+              )}
             </div>
-            {i < 2 && (
-              <div className="hidden md:flex absolute top-1/2 -right-5 -translate-y-1/2 z-10">
-                <ChevronRight className="h-8 w-8 text-primary/40" />
-              </div>
-            )}
-          </div>
+          </ScrollReveal>
         ))}
       </div>
 
-      {/* Projeção de lucro */}
-      <div className="glass rounded-xl md:rounded-2xl p-5 md:p-10">
-        <h3 className="font-heading text-lg md:text-2xl font-bold text-center mb-4 md:mb-8">
-          Projeção de <span className="text-primary">Lucro</span>
-        </h3>
-        <div className="grid grid-cols-3 gap-2 md:gap-6">
-          {[
-            { keys: 5, revenue: "R$475" },
-            { keys: 10, revenue: "R$961" },
-            { keys: 20, revenue: "R$1.932" },
-          ].map((p) => (
-            <div key={p.keys} className="glass-card rounded-lg md:rounded-xl p-2.5 md:p-6 text-center">
-              <p className="text-[9px] md:text-sm text-muted-foreground mb-0.5 md:mb-1">Venda {p.keys} chaves</p>
-              <p className="text-lg sm:text-2xl md:text-4xl font-heading font-extrabold text-primary">{p.revenue}</p>
-              <p className="text-[9px] md:text-xs text-muted-foreground mt-0.5 md:mt-1">de lucro líquido</p>
-            </div>
-          ))}
+      <ScrollReveal>
+        <div className="glass rounded-xl md:rounded-2xl p-5 md:p-10">
+          <h3 className="font-heading text-lg md:text-2xl font-bold text-center mb-4 md:mb-8">
+            Projeção de <span className="text-primary">Lucro</span>
+          </h3>
+          <div className="grid grid-cols-3 gap-2 md:gap-6">
+            {[
+              { keys: 5, revenue: "R$475" },
+              { keys: 10, revenue: "R$961" },
+              { keys: 20, revenue: "R$1.932" },
+            ].map((p) => (
+              <div key={p.keys} className="glass-card rounded-lg md:rounded-xl p-2.5 md:p-6 text-center">
+                <p className="text-[9px] md:text-sm text-muted-foreground mb-0.5 md:mb-1">Venda {p.keys} chaves</p>
+                <p className="text-lg sm:text-2xl md:text-4xl font-heading font-extrabold text-primary">{p.revenue}</p>
+                <p className="text-[9px] md:text-xs text-muted-foreground mt-0.5 md:mt-1">de lucro líquido</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </ScrollReveal>
     </div>
   </section>
 );
