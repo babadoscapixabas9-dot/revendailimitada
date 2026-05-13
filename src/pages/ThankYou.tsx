@@ -36,7 +36,7 @@ const ThankYou = () => {
 
         {/* CTA Button */}
         <a
-          href="https://chat.whatsapp.com/KbGHnTHNaNW7wsS16VA5J4"
+          href="https://chat.whatsapp.com/C6VSfPpJZ8c7jHhBjgusBo"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full sm:w-auto"
