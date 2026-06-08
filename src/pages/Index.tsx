@@ -138,7 +138,7 @@ const HowItWorks = () => (
       <div className="space-y-3 md:space-y-0 md:grid md:grid-cols-3 md:gap-4 mb-8 md:mb-16">
         {[
           { step: "01", title: "Compre o Acesso", desc: "Adquira o painel de revenda por apenas R$9,90", icon: LayoutDashboard },
-          { step: "02", title: "Compre Chaves", desc: "Dentro do painel, compre chaves vitalícias por R$49,90", icon: Key },
+          { step: "02", title: "Compre Chaves", desc: "Dentro do painel, compre chaves por R$34,90", icon: Key },
           { step: "03", title: "Revenda e Lucre", desc: "Revenda cada chave por até R$147 e fique com todo o lucro", icon: TrendingUp },
         ].map((s, i) => (
           <ScrollReveal key={s.step} delay={i * 150}>
@@ -200,7 +200,7 @@ const Benefits = () => (
       <div className="grid grid-cols-2 gap-2.5 md:gap-6">
         {[
           { icon: LayoutDashboard, title: "Painel de Revenda Exclusivo", desc: "Gerencie e compre chaves quando quiser" },
-          { icon: Key, title: "Chaves Vitalícias", desc: "Produto com alto valor percebido" },
+          { icon: Key, title: "Chaves de Acesso", desc: "Produto com alto valor percebido" },
           { icon: Users, title: "Grupo de Suporte", desc: "Comunidade + suporte para ajudar nas vendas" },
           { icon: TrendingUp, title: "Produto com Alta Demanda", desc: "Ferramenta útil que vende fácil" },
         ].map((b, i) => (
