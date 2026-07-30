@@ -451,6 +451,7 @@ const Index = () => (
     <Suspense fallback={null}><SaleNotification /></Suspense>
     <Hero />
     <WhatItDoes />
+    <BrowserCompatibility />
     <HowItWorks />
     <Benefits />
     <ForWho />
