@@ -122,6 +122,72 @@ const WhatItDoes = () => (
   </section>
 );
 
+/* ─── Compatível com Navegadores ─── */
+const browsers = [
+  { name: "CHROME", src: "https://www.google.com/chrome/static/images/chrome-logo.svg", alt: "Logotipo do Google Chrome" },
+  { name: "EDGE", src: "https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg", alt: "Logotipo do Microsoft Edge" },
+  { name: "FIREFOX", src: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg", alt: "Logotipo do Mozilla Firefox" },
+  { name: "BRAVE", src: "https://cdn.simpleicons.org/brave", alt: "Logotipo do Brave Browser" },
+  { name: "OPERA", src: "https://upload.wikimedia.org/wikipedia/commons/4/49/Opera_2015_icon.svg", alt: "Logotipo do Opera Browser" },
+  { name: "SAFARI", src: "https://cdn.simpleicons.org/safari", alt: "Logotipo do Apple Safari" },
+  { name: "IOS", src: "https://cdn.simpleicons.org/apple/ffffff", alt: "Logotipo do Apple iOS" },
+  { name: "ANDROID", src: "https://cdn.simpleicons.org/android/3ddc84", alt: "Logotipo do Android" },
+];
+
+const BrowserCompatibility = () => (
+  <section
+    aria-labelledby="browsers-heading"
+    className="relative overflow-hidden border-y border-white/5 bg-[#050505] py-12 sm:py-16"
+    style={{ contentVisibility: "auto", containIntrinsicSize: "1px 220px" }}
+  >
+    <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+    <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+
+    <div className="relative mx-auto mb-8 max-w-7xl px-4 sm:px-6">
+      <div className="flex items-center justify-center gap-3">
+        <span className="h-px w-8 bg-gradient-to-r from-transparent to-primary/60" />
+        <h2 id="browsers-heading" className="text-center text-[10px] font-black uppercase tracking-[0.4em] text-white/60 sm:text-[11px]">
+          Compatível com todos os navegadores
+        </h2>
+        <span className="h-px w-8 bg-gradient-to-l from-transparent to-primary/60" />
+      </div>
+    </div>
+
+    <div
+      className="relative mx-auto max-w-7xl overflow-hidden px-6"
+      style={{ maskImage: "linear-gradient(90deg,transparent,black_12%,black_88%,transparent)" }}
+    >
+      <div className="flex w-max items-center animate-marquee" style={{ animationDuration: "60s" }}>
+        {[...Array(4)].map((_, groupIndex) => (
+          <div
+            key={groupIndex}
+            aria-hidden={groupIndex > 0}
+            className="flex shrink-0 items-center gap-12 pr-12"
+          >
+            {browsers.map((b) => (
+              <div
+                key={`${groupIndex}-${b.name}`}
+                className="group flex shrink-0 items-center gap-3 opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_14px_hsl(258_85%_55%/0.65)]"
+              >
+                <img
+                  src={b.src}
+                  alt={b.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-6 w-6 object-contain"
+                />
+                <span className="font-heading text-xl font-bold tracking-tight text-white/90 group-hover:text-white">
+                  {b.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 /* ─── Como Funciona ─── */
 const HowItWorks = () => (
   <section className="px-5 py-12 md:py-28">
