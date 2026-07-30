@@ -107,6 +107,10 @@ export default {
           "0%, 100%": { transform: "translate(0, 0) scale(1)", opacity: "0.4" },
           "50%": { transform: "translate(30px, 20px) scale(1.2)", opacity: "0.7" },
         },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -118,6 +122,7 @@ export default {
         "hero-glow-1": "hero-glow-1 6s ease-in-out infinite",
         "hero-glow-2": "hero-glow-2 8s ease-in-out infinite",
         "hero-glow-3": "hero-glow-3 7s ease-in-out infinite",
+        marquee: "marquee 60s linear infinite",
       },
     },
   },
