@@ -216,7 +216,7 @@ const Hero = () => (
 
 /* ─── O Que a Extensão Faz ─── */
 const WhatItDoes = () => (
-  <section className="px-5 py-12 md:py-28">
+  <section id="o-que-faz" className="px-5 py-12 md:py-28 scroll-mt-20">
     <div className="mx-auto max-w-5xl">
       <ScrollReveal>
         <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-2 md:mb-4">
@@ -316,7 +316,7 @@ const BrowserCompatibility = () => (
 
 /* ─── Como Funciona ─── */
 const HowItWorks = () => (
-  <section className="px-5 py-12 md:py-28">
+  <section id="como-funciona" className="px-5 py-12 md:py-28 scroll-mt-20">
     <div className="mx-auto max-w-5xl">
       <ScrollReveal>
         <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-2 md:mb-4">
@@ -381,7 +381,7 @@ const HowItWorks = () => (
 
 /* ─── O que você recebe ─── */
 const Benefits = () => (
-  <section className="px-5 py-12 md:py-28">
+  <section id="recebe" className="px-5 py-12 md:py-28 scroll-mt-20">
     <div className="mx-auto max-w-5xl">
       <ScrollReveal>
         <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
@@ -449,7 +449,7 @@ const testimonials = [
 ];
 
 const SocialProof = () => (
-  <section className="px-5 py-12 md:py-28">
+  <section id="depoimentos" className="px-5 py-12 md:py-28 scroll-mt-20">
     <div className="mx-auto max-w-5xl">
       <ScrollReveal>
         <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
@@ -516,7 +516,7 @@ const faqItems = [
 ];
 
 const FAQ = () => (
-  <section className="px-5 py-12 md:py-28">
+  <section id="faq" className="px-5 py-12 md:py-28 scroll-mt-20">
     <div className="mx-auto max-w-3xl">
       <ScrollReveal>
         <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
@@ -575,6 +575,7 @@ const Footer = () => (
 const Index = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
     <Suspense fallback={null}><SaleNotification /></Suspense>
+    <Navbar />
     <Hero />
     <WhatItDoes />
     <BrowserCompatibility />
