@@ -244,13 +244,13 @@ const browsers = [
 const BrowserCompatibility = () => (
   <section
     aria-labelledby="browsers-heading"
-    className="relative overflow-hidden border-y border-white/5 bg-[#050505] py-12 sm:py-16"
+    className="relative overflow-hidden rounded-2xl border border-primary/15 bg-[#050505]/60 py-5 backdrop-blur-sm sm:py-6"
     style={{ contentVisibility: "auto", containIntrinsicSize: "1px 220px" }}
   >
     <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
     <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
-    <div className="relative mx-auto mb-8 max-w-7xl px-4 sm:px-6">
+    <div className="relative mx-auto mb-5 max-w-7xl px-4 sm:px-6">
       <div className="flex items-center justify-center gap-3">
         <span className="h-px w-8 bg-gradient-to-r from-transparent to-primary/60" />
         <h2 id="browsers-heading" className="text-center text-[10px] font-black uppercase tracking-[0.4em] text-white/60 sm:text-[11px]">
