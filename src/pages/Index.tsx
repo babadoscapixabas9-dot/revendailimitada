@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import logo from "@/assets/logo.png";
 import heroBanner from "@/assets/hero-banner.png.asset.json";
+import heroCharacter from "@/assets/hero-character.png";
 
 const SaleNotification = lazy(() => import("@/components/SaleNotification").then(m => ({ default: m.SaleNotification })));
 
