@@ -109,7 +109,7 @@ export default {
         },
         marquee: {
           from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(-50%)" },
         },
         "spark-fade": {
           "0%": { opacity: "1", transform: "scale(1)" },
