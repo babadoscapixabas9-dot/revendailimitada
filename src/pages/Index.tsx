@@ -77,12 +77,12 @@ const heroTrust = [
 ];
 
 const Hero = () => (
-  <section className="relative overflow-hidden px-4 pt-8 pb-10 md:px-8 md:pt-12 md:pb-20">
+  <section className="relative overflow-hidden px-4 pt-6 pb-8 md:px-8 md:pt-12 md:pb-20">
     {/* Banner de fundo */}
     <img
       src={heroBanner.url}
       alt="Painel de revenda da extensão ilimitada"
-      className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-right opacity-60 md:opacity-75"
+      className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-right opacity-35 md:opacity-75"
       loading="eager"
       fetchPriority="high"
     />
@@ -101,33 +101,33 @@ const Hero = () => (
           Painel de revenda exclusivo
         </span>
 
-        <h1 className="font-heading mt-4 text-[1.7rem] font-extrabold leading-[1.08] tracking-tight sm:text-4xl md:mt-6 md:text-6xl lg:text-[4.1rem] glow-text">
+        <h1 className="font-heading mt-3 text-[1.5rem] font-extrabold leading-[1.12] tracking-tight sm:text-4xl md:mt-6 md:text-6xl lg:text-[4.1rem] glow-text">
           Seja Revendedor da Extensão Ilimitada e{" "}
           <span className="bg-gradient-to-r from-[hsl(270_100%_72%)] to-[hsl(258_85%_55%)] bg-clip-text text-transparent">
             Lucre Todos os Dias
           </span>
         </h1>
 
-        <p className="mx-auto mt-3.5 max-w-xl text-[0.9rem] leading-relaxed text-muted-foreground md:mt-6 md:text-lg lg:mx-0">
+        <p className="mx-auto mt-3 max-w-xl text-[0.83rem] leading-relaxed text-muted-foreground md:mt-6 md:text-lg lg:mx-0">
           Com apenas <strong className="text-primary">R$9,90</strong> você recebe acesso ao painel de revenda + grupo de suporte e pode comprar chaves por{" "}
           <strong className="text-primary">R$34,90</strong> para revender por até <strong className="text-primary">R$147</strong>.
         </p>
 
-        <div className="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2 md:mt-7 md:gap-3">
+        <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-2 md:mt-7 md:gap-3">
           {heroFeatures.map((f) => (
-            <div key={f.title} className="flex items-center gap-3 rounded-xl border border-primary/15 bg-white/[0.03] p-2.5 text-left backdrop-blur-sm md:p-3.5">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 md:h-11 md:w-11">
-                <f.icon className="h-4 w-4 text-primary md:h-5 md:w-5" />
+            <div key={f.title} className="flex flex-col items-start gap-2 rounded-xl border border-primary/15 bg-white/[0.03] p-2.5 text-left backdrop-blur-sm sm:flex-row sm:items-center sm:gap-3 md:p-3.5">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 md:h-11 md:w-11">
+                <f.icon className="h-3.5 w-3.5 text-primary md:h-5 md:w-5" />
               </div>
               <div className="leading-tight">
-                <p className="text-[0.8rem] font-semibold text-foreground md:text-[0.95rem]">{f.title}</p>
-                <p className="text-[0.72rem] text-muted-foreground md:text-sm">{f.desc}</p>
+                <p className="text-[0.74rem] font-semibold text-foreground md:text-[0.95rem]">{f.title}</p>
+                <p className="text-[0.68rem] text-muted-foreground md:text-sm">{f.desc}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-6 md:mt-8">
+        <div className="mt-5 md:mt-8">
           <a href="#oferta">
             <RainbowButton className="w-full text-[0.85rem] font-heading font-bold uppercase tracking-wide sm:w-auto sm:text-base md:px-10 md:py-5 md:text-lg">
               <Rocket className="mr-2 h-4 w-4 md:h-5 md:w-5" />
@@ -157,7 +157,7 @@ const Hero = () => (
     </div>
 
     {/* Barra de navegadores */}
-    <div className="relative mx-auto mt-6 max-w-6xl md:mt-8">
+    <div className="relative mx-auto mt-5 max-w-6xl md:mt-8">
       <BrowserCompatibility />
     </div>
 
@@ -244,7 +244,7 @@ const browsers = [
 const BrowserCompatibility = () => (
   <section
     aria-labelledby="browsers-heading"
-    className="relative overflow-hidden rounded-2xl border border-white/[0.06] py-6 backdrop-blur-sm sm:py-7"
+    className="relative overflow-hidden rounded-2xl border border-white/[0.06] py-4 backdrop-blur-sm sm:py-7"
     style={{ contentVisibility: "auto", containIntrinsicSize: "1px 220px" }}
   >
     <div
@@ -258,18 +258,18 @@ const BrowserCompatibility = () => (
     <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
     <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-    <div className="relative mx-auto mb-5 max-w-7xl px-4 sm:px-6">
-      <div className="flex items-center justify-center gap-4">
-        <span className="h-px w-10 bg-gradient-to-r from-transparent to-primary/50" />
-        <h2 id="browsers-heading" className="text-center text-[10px] font-semibold uppercase tracking-[0.38em] text-muted-foreground sm:text-[11px]">
+    <div className="relative mx-auto mb-3.5 max-w-7xl px-4 sm:mb-5 sm:px-6">
+      <div className="flex items-center justify-center gap-3 sm:gap-4">
+        <span className="h-px w-6 bg-gradient-to-r from-transparent to-primary/50 sm:w-10" />
+        <h2 id="browsers-heading" className="text-center text-[9px] font-semibold uppercase tracking-[0.22em] text-muted-foreground sm:text-[11px] sm:tracking-[0.38em]">
           Compatível com todos os navegadores
         </h2>
-        <span className="h-px w-10 bg-gradient-to-l from-transparent to-primary/50" />
+        <span className="h-px w-6 bg-gradient-to-l from-transparent to-primary/50 sm:w-10" />
       </div>
     </div>
 
     <div
-      className="relative mx-auto max-w-7xl overflow-hidden px-6"
+      className="relative mx-auto max-w-7xl overflow-hidden px-4 sm:px-6"
       style={{ maskImage: "linear-gradient(90deg,transparent,black_12%,black_88%,transparent)" }}
     >
       <div className="flex w-max items-center animate-marquee" style={{ animationDuration: "60s" }}>
@@ -277,7 +277,7 @@ const BrowserCompatibility = () => (
           <div
             key={groupIndex}
             aria-hidden={groupIndex > 0}
-            className="flex shrink-0 items-center gap-12 pr-12"
+            className="flex shrink-0 items-center gap-8 pr-8 sm:gap-12 sm:pr-12"
           >
             {browsers.map((b) => (
               <div
@@ -289,9 +289,9 @@ const BrowserCompatibility = () => (
                   alt={b.alt}
                   loading="lazy"
                   decoding="async"
-                  className="h-5 w-5 object-contain"
+                  className="h-4 w-4 object-contain sm:h-5 sm:w-5"
                 />
-                <span className="font-heading text-base font-semibold tracking-tight text-foreground/80 group-hover:text-foreground sm:text-lg">
+                <span className="font-heading text-sm font-semibold tracking-tight text-foreground/80 group-hover:text-foreground sm:text-lg">
                   {b.name}
                 </span>
               </div>
