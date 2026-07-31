@@ -144,11 +144,11 @@ const Hero = () => (
 
       {/* Coluna direita: personagem sobre o banner */}
       <div className="relative hidden lg:flex items-center justify-center">
-        <div className="absolute inset-0 rounded-full bg-primary/20 blur-[110px]" aria-hidden="true" />
+        <div className="absolute inset-0 animate-character-aura rounded-full bg-primary/20 blur-[110px]" aria-hidden="true" />
         <img
           src={heroCharacter}
           alt="Personagem do painel de revenda"
-          className="relative z-10 w-full max-w-[520px] object-contain drop-shadow-[0_0_60px_hsl(258_85%_55%/0.55)]"
+          className="relative z-10 w-full max-w-[520px] animate-character-float object-contain drop-shadow-[0_0_60px_hsl(258_85%_55%/0.55)] will-change-transform motion-reduce:animate-none"
           loading="eager"
         />
       </div>
