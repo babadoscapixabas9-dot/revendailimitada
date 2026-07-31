@@ -77,6 +77,16 @@ const heroTrust = [
 
 const Hero = () => (
   <section className="relative overflow-hidden px-4 pt-8 pb-10 md:px-8 md:pt-12 md:pb-20">
+    {/* Banner de fundo */}
+    <img
+      src={heroBanner.url}
+      alt="Painel de revenda da extensão ilimitada"
+      className="pointer-events-none absolute inset-0 h-full w-full object-cover object-right opacity-70 md:opacity-100"
+      loading="eager"
+      fetchPriority="high"
+    />
+    <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/10 md:to-transparent" />
+
     {/* Animated background glows */}
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[260px] md:w-[900px] h-[220px] md:h-[600px] rounded-full bg-primary/10 blur-[70px] md:blur-[170px] pointer-events-none will-change-transform animate-hero-glow-1" />
     <div className="absolute top-24 left-1/4 w-[140px] md:w-[420px] h-[140px] md:h-[420px] rounded-full bg-[hsl(258_85%_55%/0.08)] blur-[50px] md:blur-[130px] pointer-events-none will-change-transform animate-hero-glow-2" />
@@ -131,53 +141,8 @@ const Hero = () => (
         </div>
       </div>
 
-      {/* Right column */}
-      <div className="relative">
-        <img
-          src={heroCharacter}
-          alt="Personagem futurista representando a extensão ilimitada"
-          width={1024}
-          height={1280}
-          className="mx-auto w-[240px] max-w-full object-contain drop-shadow-[0_0_60px_hsl(265_100%_60%/0.45)] sm:w-[320px] lg:w-[420px]"
-        />
-
-        {/* Dashboard mockup */}
-        <div className="mx-auto mt-4 max-w-md glass rounded-xl p-3.5 md:p-5 lg:absolute lg:right-0 lg:top-4 lg:mt-0 lg:w-[340px]">
-          <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Painel de revenda</p>
-          <div className="mb-3 grid grid-cols-3 gap-2">
-            {[
-              { label: "Vendas", value: "1.248", delta: "+28%" },
-              { label: "Faturamento", value: "R$42.850", delta: "+35%" },
-              { label: "Conversão", value: "38,7%", delta: "+12%" },
-            ].map((s) => (
-              <div key={s.label} className="glass-card rounded-lg p-2 text-center">
-                <p className="text-[8px] leading-tight text-muted-foreground">{s.label}</p>
-                <p className="font-heading text-[0.7rem] font-bold text-foreground md:text-sm">{s.value}</p>
-                <p className="text-[8px] font-semibold text-primary">{s.delta}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mb-2 h-1.5 w-full overflow-hidden rounded-full bg-border">
-            <div
-              className="h-full rounded-full"
-              style={{
-                background: "linear-gradient(90deg, #7c3aed, #a855f7, #7c3aed)",
-                backgroundSize: "300% 100%",
-                animation: "progress-bar 1.2s ease-out 0.6s forwards, rainbow 4s linear 1.8s infinite",
-              }}
-            />
-          </div>
-          <div className="space-y-1.5">
-            {["LOV-XXXX-71A9", "LOV-XXXX-2B8F", "LOV-XXXX-9C3D"].map((k) => (
-              <div key={k} className="flex items-center justify-between rounded-md border border-primary/10 bg-white/[0.03] px-2 py-1.5">
-                <span className="text-[9px] text-muted-foreground">{k}</span>
-                <span className="text-[9px] font-semibold text-foreground">R$ 34,90</span>
-                <span className="text-[9px] font-semibold text-emerald-400">Pago</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* Coluna direita ocupada pelo banner de fundo */}
+      <div className="hidden lg:block" aria-hidden="true" />
     </div>
 
     {/* Price steps */}
