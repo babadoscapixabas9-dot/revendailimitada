@@ -141,8 +141,16 @@ const Hero = () => (
         </div>
       </div>
 
-      {/* Coluna direita ocupada pelo banner de fundo */}
-      <div className="hidden lg:block" aria-hidden="true" />
+      {/* Coluna direita: personagem sobre o banner */}
+      <div className="relative hidden lg:flex items-center justify-center">
+        <div className="absolute inset-0 rounded-full bg-primary/20 blur-[110px]" aria-hidden="true" />
+        <img
+          src={heroCharacter}
+          alt="Personagem do painel de revenda"
+          className="relative z-10 w-full max-w-[520px] object-contain drop-shadow-[0_0_60px_hsl(258_85%_55%/0.55)]"
+          loading="eager"
+        />
+      </div>
     </div>
 
     {/* Price steps */}
