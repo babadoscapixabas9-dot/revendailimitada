@@ -156,6 +156,11 @@ const Hero = () => (
       </div>
     </div>
 
+    {/* Barra de navegadores */}
+    <div className="relative mx-auto mt-6 max-w-6xl md:mt-8">
+      <BrowserCompatibility />
+    </div>
+
     {/* Price steps */}
     <div className="relative mx-auto mt-8 grid max-w-5xl grid-cols-3 gap-2 md:mt-14 md:gap-4">
       {heroPrices.map((p, i) => (
@@ -553,7 +558,6 @@ const Index = () => (
     <Suspense fallback={null}><SaleNotification /></Suspense>
     <Navbar />
     <Hero />
-    <BrowserCompatibility />
     <WhatItDoes />
     <HowItWorks />
     <Benefits />
