@@ -244,19 +244,27 @@ const browsers = [
 const BrowserCompatibility = () => (
   <section
     aria-labelledby="browsers-heading"
-    className="relative overflow-hidden rounded-2xl border border-primary/15 bg-[#050505]/60 py-5 backdrop-blur-sm sm:py-6"
+    className="relative overflow-hidden rounded-2xl border border-white/[0.06] py-6 backdrop-blur-sm sm:py-7"
     style={{ contentVisibility: "auto", containIntrinsicSize: "1px 220px" }}
   >
-    <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
-    <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(90deg, hsl(258 85% 55% / 0.14) 0%, hsl(0 0% 4% / 0.85) 35%, hsl(0 0% 4% / 0.85) 65%, hsl(270 100% 65% / 0.14) 100%)",
+      }}
+    />
+    <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+    <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
     <div className="relative mx-auto mb-5 max-w-7xl px-4 sm:px-6">
-      <div className="flex items-center justify-center gap-3">
-        <span className="h-px w-8 bg-gradient-to-r from-transparent to-primary/60" />
-        <h2 id="browsers-heading" className="text-center text-[10px] font-black uppercase tracking-[0.4em] text-white/60 sm:text-[11px]">
+      <div className="flex items-center justify-center gap-4">
+        <span className="h-px w-10 bg-gradient-to-r from-transparent to-primary/50" />
+        <h2 id="browsers-heading" className="text-center text-[10px] font-semibold uppercase tracking-[0.38em] text-muted-foreground sm:text-[11px]">
           Compatível com todos os navegadores
         </h2>
-        <span className="h-px w-8 bg-gradient-to-l from-transparent to-primary/60" />
+        <span className="h-px w-10 bg-gradient-to-l from-transparent to-primary/50" />
       </div>
     </div>
 
@@ -274,16 +282,16 @@ const BrowserCompatibility = () => (
             {browsers.map((b) => (
               <div
                 key={`${groupIndex}-${b.name}`}
-                className="group flex shrink-0 items-center gap-3 opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_14px_hsl(258_85%_55%/0.65)]"
+                className="group flex shrink-0 items-center gap-2.5 opacity-45 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
               >
                 <img
                   src={b.src}
                   alt={b.alt}
                   loading="lazy"
                   decoding="async"
-                  className="h-6 w-6 object-contain"
+                  className="h-5 w-5 object-contain"
                 />
-                <span className="font-heading text-xl font-bold tracking-tight text-white/90 group-hover:text-white">
+                <span className="font-heading text-base font-semibold tracking-tight text-foreground/80 group-hover:text-foreground sm:text-lg">
                   {b.name}
                 </span>
               </div>
