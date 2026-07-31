@@ -77,12 +77,12 @@ const heroTrust = [
 ];
 
 const Hero = () => (
-  <section className="relative overflow-hidden px-4 pt-8 pb-10 md:px-8 md:pt-12 md:pb-20">
+  <section className="relative overflow-hidden px-4 pt-6 pb-8 md:px-8 md:pt-12 md:pb-20">
     {/* Banner de fundo */}
     <img
       src={heroBanner.url}
       alt="Painel de revenda da extensão ilimitada"
-      className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-right opacity-60 md:opacity-75"
+      className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-right opacity-35 md:opacity-75"
       loading="eager"
       fetchPriority="high"
     />
@@ -157,7 +157,7 @@ const Hero = () => (
     </div>
 
     {/* Barra de navegadores */}
-    <div className="relative mx-auto mt-6 max-w-6xl md:mt-8">
+    <div className="relative mx-auto mt-5 max-w-6xl md:mt-8">
       <BrowserCompatibility />
     </div>
 
@@ -244,7 +244,7 @@ const browsers = [
 const BrowserCompatibility = () => (
   <section
     aria-labelledby="browsers-heading"
-    className="relative overflow-hidden rounded-2xl border border-white/[0.06] py-6 backdrop-blur-sm sm:py-7"
+    className="relative overflow-hidden rounded-2xl border border-white/[0.06] py-4 backdrop-blur-sm sm:py-7"
     style={{ contentVisibility: "auto", containIntrinsicSize: "1px 220px" }}
   >
     <div
@@ -258,18 +258,18 @@ const BrowserCompatibility = () => (
     <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
     <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-    <div className="relative mx-auto mb-5 max-w-7xl px-4 sm:px-6">
-      <div className="flex items-center justify-center gap-4">
-        <span className="h-px w-10 bg-gradient-to-r from-transparent to-primary/50" />
-        <h2 id="browsers-heading" className="text-center text-[10px] font-semibold uppercase tracking-[0.38em] text-muted-foreground sm:text-[11px]">
+    <div className="relative mx-auto mb-3.5 max-w-7xl px-4 sm:mb-5 sm:px-6">
+      <div className="flex items-center justify-center gap-3 sm:gap-4">
+        <span className="h-px w-6 bg-gradient-to-r from-transparent to-primary/50 sm:w-10" />
+        <h2 id="browsers-heading" className="text-center text-[9px] font-semibold uppercase tracking-[0.22em] text-muted-foreground sm:text-[11px] sm:tracking-[0.38em]">
           Compatível com todos os navegadores
         </h2>
-        <span className="h-px w-10 bg-gradient-to-l from-transparent to-primary/50" />
+        <span className="h-px w-6 bg-gradient-to-l from-transparent to-primary/50 sm:w-10" />
       </div>
     </div>
 
     <div
-      className="relative mx-auto max-w-7xl overflow-hidden px-6"
+      className="relative mx-auto max-w-7xl overflow-hidden px-4 sm:px-6"
       style={{ maskImage: "linear-gradient(90deg,transparent,black_12%,black_88%,transparent)" }}
     >
       <div className="flex w-max items-center animate-marquee" style={{ animationDuration: "60s" }}>
@@ -277,7 +277,7 @@ const BrowserCompatibility = () => (
           <div
             key={groupIndex}
             aria-hidden={groupIndex > 0}
-            className="flex shrink-0 items-center gap-12 pr-12"
+            className="flex shrink-0 items-center gap-8 pr-8 sm:gap-12 sm:pr-12"
           >
             {browsers.map((b) => (
               <div
@@ -289,9 +289,9 @@ const BrowserCompatibility = () => (
                   alt={b.alt}
                   loading="lazy"
                   decoding="async"
-                  className="h-5 w-5 object-contain"
+                  className="h-4 w-4 object-contain sm:h-5 sm:w-5"
                 />
-                <span className="font-heading text-base font-semibold tracking-tight text-foreground/80 group-hover:text-foreground sm:text-lg">
+                <span className="font-heading text-sm font-semibold tracking-tight text-foreground/80 group-hover:text-foreground sm:text-lg">
                   {b.name}
                 </span>
               </div>
