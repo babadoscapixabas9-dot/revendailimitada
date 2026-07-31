@@ -82,16 +82,16 @@ const Hero = () => (
     <img
       src={heroBanner.url}
       alt="Painel de revenda da extensão ilimitada"
-      className="pointer-events-none absolute inset-0 h-full w-full object-cover object-right opacity-70 md:opacity-100"
+      className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-right opacity-60 md:opacity-75"
       loading="eager"
       fetchPriority="high"
     />
-    <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/10 md:to-transparent" />
+    <div className="pointer-events-none absolute inset-0 -z-[5] bg-gradient-to-r from-background via-background/90 to-background/25 md:via-background/80 md:to-background/40" />
 
     {/* Animated background glows */}
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[260px] md:w-[900px] h-[220px] md:h-[600px] rounded-full bg-primary/10 blur-[70px] md:blur-[170px] pointer-events-none will-change-transform animate-hero-glow-1" />
-    <div className="absolute top-24 left-1/4 w-[140px] md:w-[420px] h-[140px] md:h-[420px] rounded-full bg-[hsl(258_85%_55%/0.08)] blur-[50px] md:blur-[130px] pointer-events-none will-change-transform animate-hero-glow-2" />
-    <div className="absolute -top-10 right-1/4 w-[120px] md:w-[340px] h-[120px] md:h-[340px] rounded-full bg-accent/8 blur-[50px] md:blur-[130px] pointer-events-none will-change-transform animate-hero-glow-3" />
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-[4] w-[260px] md:w-[900px] h-[220px] md:h-[600px] rounded-full bg-primary/10 blur-[70px] md:blur-[170px] pointer-events-none will-change-transform animate-hero-glow-1" />
+    <div className="absolute top-24 left-1/4 -z-[4] w-[140px] md:w-[420px] h-[140px] md:h-[420px] rounded-full bg-[hsl(258_85%_55%/0.08)] blur-[50px] md:blur-[130px] pointer-events-none will-change-transform animate-hero-glow-2" />
+    <div className="absolute -top-10 right-1/4 -z-[4] w-[120px] md:w-[340px] h-[120px] md:h-[340px] rounded-full bg-accent/8 blur-[50px] md:blur-[130px] pointer-events-none will-change-transform animate-hero-glow-3" />
 
     <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1.05fr_1fr] lg:gap-10">
       {/* Left column */}
