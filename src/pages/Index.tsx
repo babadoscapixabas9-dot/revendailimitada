@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import logo from "@/assets/logo.png";
 import heroBanner from "@/assets/hero-banner.png.asset.json";
-import heroCharacter from "@/assets/hero-character-new.png.asset.json";
+import heroCharacter from "@/assets/hero-character-v2.png.asset.json";
 
 const SaleNotification = lazy(() => import("@/components/SaleNotification").then(m => ({ default: m.SaleNotification })));
 
@@ -142,15 +142,17 @@ const Hero = () => (
         </div>
       </div>
 
-      {/* Coluna direita: personagem sobre o banner */}
+      {/* Coluna direita: painel de revenda em card */}
       <div className="relative hidden lg:flex items-center justify-center">
         <div className="absolute inset-0 animate-character-aura rounded-full bg-primary/20 blur-[110px]" aria-hidden="true" />
-        <img
-          src={heroCharacter.url}
-          alt="Personagem do painel de revenda"
-          className="relative z-10 w-full max-w-[600px] animate-character-float object-contain drop-shadow-[0_0_60px_hsl(258_85%_55%/0.55)] will-change-transform motion-reduce:animate-none"
-          loading="eager"
-        />
+        <div className="relative z-10 w-full max-w-[600px] overflow-hidden rounded-3xl border border-primary/20 bg-[#050505]/80 p-2 shadow-[0_0_60px_-12px_hsl(258_85%_55%/0.45)] backdrop-blur-sm animate-character-float will-change-transform motion-reduce:animate-none">
+          <img
+            src={heroCharacter.url}
+            alt="Painel de revenda da extensão ilimitada"
+            className="w-full rounded-2xl object-contain"
+            loading="eager"
+          />
+        </div>
       </div>
     </div>
 
