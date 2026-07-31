@@ -115,6 +115,14 @@ export default {
           "0%": { opacity: "1", transform: "scale(1)" },
           "100%": { opacity: "0", transform: "scale(0.2) translateY(10px)" },
         },
+        "character-float": {
+          "0%, 100%": { transform: "translateY(0) scale(1)" },
+          "50%": { transform: "translateY(-18px) scale(1.02)" },
+        },
+        "character-aura": {
+          "0%, 100%": { opacity: "0.35", transform: "scale(1)" },
+          "50%": { opacity: "0.7", transform: "scale(1.12)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -128,6 +136,8 @@ export default {
         "hero-glow-3": "hero-glow-3 7s ease-in-out infinite",
         marquee: "marquee 60s linear infinite",
         "spark-fade": "spark-fade 0.75s ease-out forwards",
+        "character-float": "character-float 6s ease-in-out infinite",
+        "character-aura": "character-aura 4s ease-in-out infinite",
       },
     },
   },
