@@ -1,78 +1,107 @@
 import { useEffect, useRef, useState } from "react";
 
-type Spark = { id: number; x: number; y: number; size: number; hue: number };
+const POOL = 26;
+const LIFE = 620; // ms
 
 /** Purple rocket cursor that emits glowing sparks while moving. Desktop / fine-pointer only. */
 export const RocketCursor = () => {
   const [enabled, setEnabled] = useState(false);
-  const [sparks, setSparks] = useState<Spark[]>([]);
   const rocketRef = useRef<HTMLDivElement>(null);
-  const pos = useRef({ x: -100, y: -100 });
-  const raf = useRef<number>();
-  const lastSpark = useRef(0);
-  const sparkId = useRef(0);
+  const layerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fine = window.matchMedia("(pointer: fine)").matches;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!fine || reduced) return;
     setEnabled(true);
+  }, []);
 
-    const render = () => {
-      if (rocketRef.current) {
-        rocketRef.current.style.transform = `translate3d(${pos.current.x}px, ${pos.current.y}px, 0)`;
-      }
-      raf.current = requestAnimationFrame(render);
-    };
-    raf.current = requestAnimationFrame(render);
+  useEffect(() => {
+    if (!enabled) return;
+    const layer = layerRef.current;
+    const rocket = rocketRef.current;
+    if (!layer || !rocket) return;
+
+    document.documentElement.classList.add("rocket-cursor-active");
+
+    // Pre-allocated spark pool — no React state, no timers, no DOM churn.
+    const nodes: HTMLSpanElement[] = [];
+    const born = new Float64Array(POOL);
+    const px = new Float32Array(POOL);
+    const py = new Float32Array(POOL);
+    const ps = new Float32Array(POOL);
+    for (let i = 0; i < POOL; i++) {
+      const el = document.createElement("span");
+      el.style.cssText =
+        "position:absolute;left:0;top:0;border-radius:9999px;width:6px;height:6px;opacity:0;will-change:transform,opacity;" +
+        "background:hsl(272 100% 74%);box-shadow:0 0 8px hsl(270 100% 65% / .9),0 0 16px hsl(270 100% 60% / .6)";
+      layer.appendChild(el);
+      nodes.push(el);
+      born[i] = -Infinity;
+    }
+
+    let mx = -100;
+    let my = -100;
+    let rx = -100;
+    let ry = -100;
+    let next = 0;
+    let lastSpark = 0;
+    let moving = false;
+    let raf = 0;
 
     const onMove = (e: PointerEvent) => {
-      pos.current = { x: e.clientX, y: e.clientY };
-      const now = performance.now();
-      if (now - lastSpark.current > 28) {
-        lastSpark.current = now;
-        const id = ++sparkId.current;
-        const spark: Spark = {
-          id,
-          x: e.clientX - 6 + (Math.random() * 12 - 6),
-          y: e.clientY + 4 + (Math.random() * 10 - 4),
-          size: 2 + Math.random() * 4,
-          hue: 265 + Math.random() * 25,
-        };
-        setSparks((prev) => [...prev.slice(-28), spark]);
-        window.setTimeout(() => {
-          setSparks((prev) => prev.filter((s) => s.id !== id));
-        }, 750);
-      }
+      mx = e.clientX;
+      my = e.clientY;
+      moving = true;
     };
 
+    const loop = (now: number) => {
+      raf = requestAnimationFrame(loop);
+
+      // smooth follow (light easing keeps it fluid without lag)
+      rx += (mx - rx) * 0.45;
+      ry += (my - ry) * 0.45;
+      rocket.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
+
+      if (moving && now - lastSpark > 34) {
+        lastSpark = now;
+        moving = false;
+        const i = next;
+        next = (next + 1) % POOL;
+        px[i] = rx - 4 + (Math.random() * 10 - 5);
+        py[i] = ry + 4 + (Math.random() * 8 - 4);
+        ps[i] = 0.5 + Math.random() * 0.7;
+        born[i] = now;
+      }
+
+      for (let i = 0; i < POOL; i++) {
+        const age = now - born[i];
+        const el = nodes[i];
+        if (age > LIFE) {
+          if (el.style.opacity !== "0") el.style.opacity = "0";
+          continue;
+        }
+        const t = age / LIFE;
+        el.style.opacity = String(1 - t);
+        el.style.transform = `translate3d(${px[i]}px, ${py[i] + t * 14}px, 0) scale(${ps[i] * (1 - t * 0.8)})`;
+      }
+    };
+    raf = requestAnimationFrame(loop);
+
     window.addEventListener("pointermove", onMove, { passive: true });
-    document.documentElement.classList.add("rocket-cursor-active");
     return () => {
       window.removeEventListener("pointermove", onMove);
+      cancelAnimationFrame(raf);
       document.documentElement.classList.remove("rocket-cursor-active");
-      if (raf.current) cancelAnimationFrame(raf.current);
+      nodes.forEach((n) => n.remove());
     };
-  }, []);
+  }, [enabled]);
 
   if (!enabled) return null;
 
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 z-[9999]">
-      {sparks.map((s) => (
-        <span
-          key={s.id}
-          className="absolute rounded-full animate-spark-fade"
-          style={{
-            left: s.x,
-            top: s.y,
-            width: s.size,
-            height: s.size,
-            background: `hsl(${s.hue} 100% 72%)`,
-            boxShadow: `0 0 8px hsl(${s.hue} 100% 65% / 0.9), 0 0 16px hsl(${s.hue} 100% 60% / 0.6)`,
-          }}
-        />
-      ))}
+      <div ref={layerRef} className="absolute inset-0" />
       <div ref={rocketRef} className="absolute left-0 top-0 will-change-transform">
         <svg
           width="30"

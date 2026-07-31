@@ -577,8 +577,8 @@ const Index = () => (
     <Suspense fallback={null}><SaleNotification /></Suspense>
     <Navbar />
     <Hero />
-    <WhatItDoes />
     <BrowserCompatibility />
+    <WhatItDoes />
     <HowItWorks />
     <Benefits />
     <ForWho />
