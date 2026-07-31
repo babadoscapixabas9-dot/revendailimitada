@@ -262,20 +262,14 @@ const BrowserCompatibility = () => (
 
     <div
       className="relative mx-auto max-w-7xl overflow-hidden px-6"
-      style={{ maskImage: "linear-gradient(90deg,transparent,black_8%,black_92%,transparent)" }}
+      style={{ maskImage: "linear-gradient(90deg,transparent,black_12%,black_88%,transparent)" }}
     >
-      <div
-        className="flex w-max items-center will-change-transform"
-        style={{
-          animation: "marquee 35s linear infinite",
-          transform: "translate3d(0,0,0)",
-        }}
-      >
-        {[...Array(2)].map((_, groupIndex) => (
+      <div className="flex w-max items-center animate-marquee" style={{ animationDuration: "60s" }}>
+        {[...Array(4)].map((_, groupIndex) => (
           <div
             key={groupIndex}
             aria-hidden={groupIndex > 0}
-            className="flex shrink-0 items-center gap-10 pr-10 sm:gap-12 sm:pr-12"
+            className="flex shrink-0 items-center gap-12 pr-12"
           >
             {browsers.map((b) => (
               <div
