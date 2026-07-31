@@ -111,6 +111,10 @@ export default {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-100%)" },
         },
+        "spark-fade": {
+          "0%": { opacity: "1", transform: "scale(1)" },
+          "100%": { opacity: "0", transform: "scale(0.2) translateY(10px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -123,6 +127,7 @@ export default {
         "hero-glow-2": "hero-glow-2 8s ease-in-out infinite",
         "hero-glow-3": "hero-glow-3 7s ease-in-out infinite",
         marquee: "marquee 60s linear infinite",
+        "spark-fade": "spark-fade 0.75s ease-out forwards",
       },
     },
   },

@@ -84,3 +84,9 @@
 #lovable-badge {
   display: none !important;
 }
+
+html.rocket-cursor-active,
+html.rocket-cursor-active body,
+html.rocket-cursor-active * {
+  cursor: none !important;
+}

@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { Check, Key, LayoutDashboard, Users, TrendingUp, Star, ArrowRight, ChevronRight, Infinity, Sparkles, BadgeCheck } from "lucide-react";
+import { Check, Key, LayoutDashboard, Users, TrendingUp, Star, ArrowRight, ChevronRight, Infinity, Sparkles, BadgeCheck, Crown, Rocket, Lock, ShieldCheck, Headphones, BarChart3, Box, Zap } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { RainbowButton } from "@/components/RainbowButton";
 import {
@@ -9,88 +9,214 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import logo from "@/assets/logo.png";
+import heroCharacter from "@/assets/hero-character.png";
 
 const SaleNotification = lazy(() => import("@/components/SaleNotification").then(m => ({ default: m.SaleNotification })));
 
 const CTA_URL = "https://pay.cakto.com.br/9vn97pp_807302";
 
-/* ─── Hero ─── */
-const Hero = () => (
-  <section className="relative overflow-hidden px-5 pt-12 pb-10 md:pt-32 md:pb-24">
-    {/* Animated background glows */}
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[250px] md:w-[800px] h-[200px] md:h-[600px] rounded-full bg-primary/8 blur-[60px] md:blur-[160px] pointer-events-none will-change-transform animate-hero-glow-1" />
-    <div className="absolute top-20 left-1/3 w-[120px] md:w-[400px] h-[120px] md:h-[400px] rounded-full bg-[hsl(258_85%_55%/0.06)] blur-[40px] md:blur-[120px] pointer-events-none will-change-transform animate-hero-glow-2" />
-    <div className="absolute -top-10 right-1/4 w-[100px] md:w-[300px] h-[100px] md:h-[300px] rounded-full bg-accent/5 blur-[50px] md:blur-[120px] pointer-events-none will-change-transform animate-hero-glow-3" />
+/* ─── Navbar ─── */
+const navLinks = [
+  { label: "Início", href: "#" },
+  { label: "Produtos", href: "#o-que-faz" },
+  { label: "Painel", href: "#como-funciona" },
+  { label: "Suporte", href: "#recebe" },
+  { label: "Revendedores", href: "#depoimentos" },
+  { label: "Dúvidas", href: "#faq" },
+];
 
-    <div className="relative mx-auto max-w-5xl text-center">
-      <img src={logo} alt="Ilimitado" className="h-8 md:h-14 w-auto mx-auto mb-5 md:mb-8 object-contain" loading="eager" fetchPriority="high" />
-
-      <h1 className="font-heading text-[1.55rem] leading-[1.15] font-extrabold tracking-tight sm:text-4xl md:text-6xl lg:text-7xl glow-text mb-3.5 md:mb-6">
-        Seja Revendedor da Extensão Ilimitada e{" "}
-        <span className="text-primary">Lucre Todos os Dias</span>
-      </h1>
-
-      <p className="mx-auto max-w-2xl text-[0.9rem] leading-relaxed md:text-xl text-muted-foreground mb-5 md:mb-8">
-        Com apenas <strong className="text-foreground">R$9,90</strong> você recebe acesso ao painel de revenda + grupo de suporte e pode comprar chaves por{" "}
-        <strong className="text-foreground">R$34,90</strong> para revender por até{" "}
-        <strong className="text-primary">R$147</strong>.
-      </p>
-
-      <div className="mx-auto max-w-sm text-left space-y-2 md:space-y-3 mb-6 md:mb-10">
-        {[
-          "Produto digital fácil de vender",
-          "Margem de lucro alta",
-          "Painel exclusivo para revendedores",
-          "Grupo de suporte para ajudar nas vendas",
-        ].map((item) => (
-          <div key={item} className="flex items-center gap-2.5 md:gap-3">
-            <div className="flex h-5 w-5 md:h-6 md:w-6 shrink-0 items-center justify-center rounded-full bg-primary/20">
-              <Check className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-            </div>
-            <span className="text-foreground text-[0.8rem] md:text-base">{item}</span>
-          </div>
-        ))}
+const Navbar = () => (
+  <header className="relative z-30 border-b border-primary/10 px-4 py-3 md:px-8 md:py-4">
+    <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+      <div className="flex items-center gap-3 md:gap-5">
+        <img src={logo} alt="Ilimitado" className="h-7 w-auto object-contain md:h-9" loading="eager" fetchPriority="high" />
+        <span className="hidden rounded-lg border border-primary/40 px-3 py-1 text-center text-[10px] font-bold uppercase leading-tight tracking-widest text-primary sm:block">
+          LOV 3.1<br />Ilimitado
+        </span>
       </div>
 
-      <a href="#oferta">
-        <RainbowButton className="w-full sm:w-auto text-[0.8rem] sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 font-heading font-bold">
-          Quero me tornar revendedor <ArrowRight className="ml-1.5 md:ml-2 h-4 w-4 md:h-5 md:w-5" />
-        </RainbowButton>
-      </a>
+      <nav className="hidden items-center gap-7 lg:flex">
+        {navLinks.map((l) => (
+          <a key={l.label} href={l.href} className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary">
+            {l.label}
+          </a>
+        ))}
+      </nav>
 
-      {/* Dashboard mockup */}
-      <div className="mt-8 md:mt-16 mx-auto max-w-3xl glass rounded-xl md:rounded-2xl p-3.5 md:p-8 animate-fade-in opacity-0" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
-        <div className="grid grid-cols-3 gap-1.5 md:gap-4 mb-3 md:mb-6">
-          {[
-            { label: "Chaves Ativas", value: "24", delay: "0.5s" },
-            { label: "Receita Total", value: "R$3.528", delay: "0.7s" },
-            { label: "Lucro Líquido", value: "R$2.570", delay: "0.9s" },
-          ].map((s) => (
-            <div key={s.label} className="glass-card rounded-lg md:rounded-xl p-2 md:p-4 text-center animate-counter-up opacity-0" style={{ animationDelay: s.delay, animationFillMode: 'forwards' }}>
-              <p className="text-[9px] md:text-sm text-muted-foreground leading-tight">{s.label}</p>
-              <p className="text-sm md:text-2xl font-heading font-bold text-primary mt-0.5 md:mt-1">{s.value}</p>
+      <a
+        href={CTA_URL}
+        className="flex items-center gap-2 rounded-xl border border-primary/50 bg-primary/10 px-3 py-2 text-[10px] font-bold uppercase tracking-widest text-foreground transition-colors hover:bg-primary/20 md:px-5 md:py-2.5 md:text-xs"
+      >
+        <Zap className="h-3.5 w-3.5 text-primary md:h-4 md:w-4" />
+        Acesso exclusivo
+      </a>
+    </div>
+  </header>
+);
+
+/* ─── Hero ─── */
+const heroFeatures = [
+  { icon: Box, title: "Produto digital", desc: "fácil de vender" },
+  { icon: BarChart3, title: "Margem de", desc: "lucro alta" },
+  { icon: ShieldCheck, title: "Painel exclusivo", desc: "para revendedores" },
+  { icon: Headphones, title: "Grupo de suporte", desc: "para ajudar nas vendas" },
+];
+
+const heroPrices = [
+  { label: "Entrada", value: "9,90", desc: "Acesso ao painel + suporte" },
+  { label: "Chave", value: "34,90", desc: "Compre por apenas" },
+  { label: "Lucro até", value: "147", desc: "Revenda e lucre todos os dias" },
+];
+
+const heroTrust = [
+  { icon: Lock, title: "Acesso imediato", desc: "Após a confirmação" },
+  { icon: Sparkles, title: "100% digital", desc: "Nada físico, tudo online" },
+  { icon: ShieldCheck, title: "Pagamento seguro", desc: "Ambiente criptografado" },
+  { icon: Infinity, title: "Uso ilimitado", desc: "Revenda sem limites" },
+];
+
+const Hero = () => (
+  <section className="relative overflow-hidden px-4 pt-8 pb-10 md:px-8 md:pt-12 md:pb-20">
+    {/* Animated background glows */}
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[260px] md:w-[900px] h-[220px] md:h-[600px] rounded-full bg-primary/10 blur-[70px] md:blur-[170px] pointer-events-none will-change-transform animate-hero-glow-1" />
+    <div className="absolute top-24 left-1/4 w-[140px] md:w-[420px] h-[140px] md:h-[420px] rounded-full bg-[hsl(258_85%_55%/0.08)] blur-[50px] md:blur-[130px] pointer-events-none will-change-transform animate-hero-glow-2" />
+    <div className="absolute -top-10 right-1/4 w-[120px] md:w-[340px] h-[120px] md:h-[340px] rounded-full bg-accent/8 blur-[50px] md:blur-[130px] pointer-events-none will-change-transform animate-hero-glow-3" />
+
+    <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1.05fr_1fr] lg:gap-10">
+      {/* Left column */}
+      <div className="text-center lg:text-left">
+        <span className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-foreground md:px-4 md:py-2 md:text-xs">
+          <Crown className="h-3.5 w-3.5 text-primary md:h-4 md:w-4" />
+          Painel de revenda exclusivo
+        </span>
+
+        <h1 className="font-heading mt-4 text-[1.7rem] font-extrabold leading-[1.08] tracking-tight sm:text-4xl md:mt-6 md:text-6xl lg:text-[4.1rem] glow-text">
+          Seja Revendedor da Extensão Ilimitada e{" "}
+          <span className="bg-gradient-to-r from-[hsl(270_100%_72%)] to-[hsl(258_85%_55%)] bg-clip-text text-transparent">
+            Lucre Todos os Dias
+          </span>
+        </h1>
+
+        <p className="mx-auto mt-3.5 max-w-xl text-[0.9rem] leading-relaxed text-muted-foreground md:mt-6 md:text-lg lg:mx-0">
+          Com apenas <strong className="text-primary">R$9,90</strong> você recebe acesso ao painel de revenda + grupo de suporte e pode comprar chaves por{" "}
+          <strong className="text-primary">R$34,90</strong> para revender por até <strong className="text-primary">R$147</strong>.
+        </p>
+
+        <div className="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2 md:mt-7 md:gap-3">
+          {heroFeatures.map((f) => (
+            <div key={f.title} className="flex items-center gap-3 rounded-xl border border-primary/15 bg-white/[0.03] p-2.5 text-left backdrop-blur-sm md:p-3.5">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 md:h-11 md:w-11">
+                <f.icon className="h-4 w-4 text-primary md:h-5 md:w-5" />
+              </div>
+              <div className="leading-tight">
+                <p className="text-[0.8rem] font-semibold text-foreground md:text-[0.95rem]">{f.title}</p>
+                <p className="text-[0.72rem] text-muted-foreground md:text-sm">{f.desc}</p>
+              </div>
             </div>
           ))}
         </div>
-        <div className="h-1.5 md:h-2 w-full rounded-full bg-border overflow-hidden">
-          <div
-            className="h-full rounded-full animate-progress-bar"
-            style={{
-              background: "linear-gradient(90deg, #7c3aed, #8b5cf6, #a855f7, #7c3aed, #8b5cf6)",
-              backgroundSize: "300% 100%",
-              animation: "progress-bar 1.2s ease-out 1s forwards, rainbow 4s linear 2.2s infinite",
-            }}
-          />
+
+        <div className="mt-6 md:mt-8">
+          <a href="#oferta">
+            <RainbowButton className="w-full text-[0.85rem] font-heading font-bold uppercase tracking-wide sm:w-auto sm:text-base md:px-10 md:py-5 md:text-lg">
+              <Rocket className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+              Quero me tornar revendedor
+              <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+            </RainbowButton>
+          </a>
+          <p className="mt-3 flex items-center justify-center gap-2 text-[0.7rem] font-bold uppercase tracking-widest text-muted-foreground md:text-xs lg:justify-start">
+            <Lock className="h-3.5 w-3.5 text-primary" />
+            Acesso imediato após a compra
+          </p>
         </div>
-        <p className="text-[9px] md:text-xs text-muted-foreground mt-1.5 md:mt-2 text-right animate-fade-in opacity-0" style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}>75% da meta mensal</p>
       </div>
+
+      {/* Right column */}
+      <div className="relative">
+        <img
+          src={heroCharacter}
+          alt="Personagem futurista representando a extensão ilimitada"
+          width={1024}
+          height={1280}
+          className="mx-auto w-[240px] max-w-full object-contain drop-shadow-[0_0_60px_hsl(265_100%_60%/0.45)] sm:w-[320px] lg:w-[420px]"
+        />
+
+        {/* Dashboard mockup */}
+        <div className="mx-auto mt-4 max-w-md glass rounded-xl p-3.5 md:p-5 lg:absolute lg:right-0 lg:top-4 lg:mt-0 lg:w-[340px]">
+          <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Painel de revenda</p>
+          <div className="mb-3 grid grid-cols-3 gap-2">
+            {[
+              { label: "Vendas", value: "1.248", delta: "+28%" },
+              { label: "Faturamento", value: "R$42.850", delta: "+35%" },
+              { label: "Conversão", value: "38,7%", delta: "+12%" },
+            ].map((s) => (
+              <div key={s.label} className="glass-card rounded-lg p-2 text-center">
+                <p className="text-[8px] leading-tight text-muted-foreground">{s.label}</p>
+                <p className="font-heading text-[0.7rem] font-bold text-foreground md:text-sm">{s.value}</p>
+                <p className="text-[8px] font-semibold text-primary">{s.delta}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mb-2 h-1.5 w-full overflow-hidden rounded-full bg-border">
+            <div
+              className="h-full rounded-full"
+              style={{
+                background: "linear-gradient(90deg, #7c3aed, #a855f7, #7c3aed)",
+                backgroundSize: "300% 100%",
+                animation: "progress-bar 1.2s ease-out 0.6s forwards, rainbow 4s linear 1.8s infinite",
+              }}
+            />
+          </div>
+          <div className="space-y-1.5">
+            {["LOV-XXXX-71A9", "LOV-XXXX-2B8F", "LOV-XXXX-9C3D"].map((k) => (
+              <div key={k} className="flex items-center justify-between rounded-md border border-primary/10 bg-white/[0.03] px-2 py-1.5">
+                <span className="text-[9px] text-muted-foreground">{k}</span>
+                <span className="text-[9px] font-semibold text-foreground">R$ 34,90</span>
+                <span className="text-[9px] font-semibold text-emerald-400">Pago</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Price steps */}
+    <div className="relative mx-auto mt-8 grid max-w-5xl grid-cols-3 gap-2 md:mt-14 md:gap-4">
+      {heroPrices.map((p, i) => (
+        <div key={p.label} className="relative rounded-xl border border-primary/25 bg-white/[0.03] p-2.5 text-center backdrop-blur-sm md:p-6">
+          <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted-foreground md:text-xs">{p.label}</p>
+          <p className="font-heading mt-1 text-lg font-extrabold text-foreground md:text-4xl">
+            <span className="text-[0.6em] text-muted-foreground">R$ </span>
+            <span className="text-primary">{p.value}</span>
+          </p>
+          <p className="mt-1 text-[9px] leading-tight text-muted-foreground md:text-sm">{p.desc}</p>
+          {i < 2 && (
+            <ChevronRight className="absolute -right-3 top-1/2 hidden h-6 w-6 -translate-y-1/2 text-primary/50 md:block" />
+          )}
+        </div>
+      ))}
+    </div>
+
+    {/* Trust bar */}
+    <div className="relative mx-auto mt-4 grid max-w-6xl grid-cols-2 gap-2 rounded-2xl border border-primary/15 bg-white/[0.02] p-3 md:mt-6 md:grid-cols-4 md:gap-4 md:p-5">
+      {heroTrust.map((t) => (
+        <div key={t.title} className="flex items-center gap-2.5 md:gap-3">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 md:h-10 md:w-10">
+            <t.icon className="h-4 w-4 text-primary md:h-5 md:w-5" />
+          </div>
+          <div className="leading-tight">
+            <p className="text-[0.68rem] font-bold uppercase tracking-wide text-primary md:text-xs">{t.title}</p>
+            <p className="text-[0.66rem] text-muted-foreground md:text-xs">{t.desc}</p>
+          </div>
+        </div>
+      ))}
     </div>
   </section>
 );
 
 /* ─── O Que a Extensão Faz ─── */
 const WhatItDoes = () => (
-  <section className="px-5 py-12 md:py-28">
+  <section id="o-que-faz" className="px-5 py-12 md:py-28 scroll-mt-20">
     <div className="mx-auto max-w-5xl">
       <ScrollReveal>
         <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-2 md:mb-4">
@@ -190,7 +316,7 @@ const BrowserCompatibility = () => (
 
 /* ─── Como Funciona ─── */
 const HowItWorks = () => (
-  <section className="px-5 py-12 md:py-28">
+  <section id="como-funciona" className="px-5 py-12 md:py-28 scroll-mt-20">
     <div className="mx-auto max-w-5xl">
       <ScrollReveal>
         <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-2 md:mb-4">
@@ -255,7 +381,7 @@ const HowItWorks = () => (
 
 /* ─── O que você recebe ─── */
 const Benefits = () => (
-  <section className="px-5 py-12 md:py-28">
+  <section id="recebe" className="px-5 py-12 md:py-28 scroll-mt-20">
     <div className="mx-auto max-w-5xl">
       <ScrollReveal>
         <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
@@ -323,7 +449,7 @@ const testimonials = [
 ];
 
 const SocialProof = () => (
-  <section className="px-5 py-12 md:py-28">
+  <section id="depoimentos" className="px-5 py-12 md:py-28 scroll-mt-20">
     <div className="mx-auto max-w-5xl">
       <ScrollReveal>
         <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
@@ -390,7 +516,7 @@ const faqItems = [
 ];
 
 const FAQ = () => (
-  <section className="px-5 py-12 md:py-28">
+  <section id="faq" className="px-5 py-12 md:py-28 scroll-mt-20">
     <div className="mx-auto max-w-3xl">
       <ScrollReveal>
         <h2 className="font-heading text-xl sm:text-3xl font-bold text-center md:text-4xl mb-6 md:mb-14">
@@ -449,6 +575,7 @@ const Footer = () => (
 const Index = () => (
   <div className="min-h-screen bg-background overflow-x-hidden">
     <Suspense fallback={null}><SaleNotification /></Suspense>
+    <Navbar />
     <Hero />
     <WhatItDoes />
     <BrowserCompatibility />
