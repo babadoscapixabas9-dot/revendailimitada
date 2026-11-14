@@ -1,55 +1,47 @@
-import { CheckCircle } from "lucide-react";
-import { RainbowButton } from "@/components/RainbowButton";
-import logo from "@/assets/logo.png";
+import { CheckCircle2, MessageCircle } from "lucide-react";
+import { CtaButton } from "@/components/lov3/CtaButton";
+import logo from "@/assets/lov3/lov3-logo-sm.webp";
 
 const ThankYou = () => {
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center relative overflow-hidden px-5 py-12">
-      {/* Background glow effects */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background px-5 py-12">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-1/4 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,hsl(280_90%_50%/.35),transparent_65%)] blur-2xl" />
+        <div className="absolute inset-x-[-40%] bottom-0 h-[40%] grid-floor animate-grid-move opacity-30" />
+      </div>
 
-      <div className="relative z-10 flex flex-col items-center text-center max-w-md w-full">
-        {/* Logo */}
-        <img src={logo} alt="Logo" className="h-14 mb-10 object-contain" />
+      <div className="relative z-10 flex w-full max-w-md flex-col items-center text-center">
+        <img src={logo} alt="LOV3" className="mb-10 h-14 w-auto drop-shadow-[0_16px_32px_rgba(168,85,247,.55)]" />
 
-        {/* Success icon */}
         <div className="relative mb-6">
-          <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse-glow" />
-          <div className="relative w-20 h-20 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-            <CheckCircle className="w-10 h-10 text-primary" />
+          <div className="absolute inset-0 rounded-full bg-success/30 blur-xl" />
+          <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-success/40 bg-success/10">
+            <CheckCircle2 className="h-10 w-10 text-success" />
           </div>
         </div>
 
-        {/* Title */}
-        <h1 className="font-heading text-2xl sm:text-3xl font-bold text-foreground mb-3">
-          Pagamento Confirmado!
-        </h1>
-
-        {/* Message */}
-        <p className="text-muted-foreground text-sm sm:text-base mb-3">
-          Seu acesso ao programa de revenda foi liberado com sucesso.
+        <h1 className="mb-3 font-heading text-3xl font-bold text-white">Pagamento confirmado!</h1>
+        <p className="mb-3 text-sm text-muted-foreground sm:text-base">
+          Seu acesso ao programa de revenda LOV3 foi liberado.
         </p>
-        <p className="text-muted-foreground text-sm sm:text-base mb-8">
-          Entre no nosso grupo exclusivo de revendedores no WhatsApp para receber suporte, materiais e começar a vender agora mesmo.
+        <p className="mb-8 text-sm text-muted-foreground sm:text-base">
+          Entre no grupo exclusivo de revendedores no WhatsApp para receber suporte, materiais e começar a vender agora.
         </p>
 
-        {/* CTA Button */}
-        <a
+        <CtaButton
           href="https://chat.whatsapp.com/DUaFegzuT8vL7HcUEjOc1j"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full sm:w-auto"
         >
-          <RainbowButton className="text-sm sm:text-base w-full">
-            Entrar no Grupo de Revenda
-          </RainbowButton>
-        </a>
+          <MessageCircle className="h-5 w-5" />
+          Entrar no grupo de revenda
+        </CtaButton>
 
-        {/* Glass card with info */}
-        <div className="glass-card rounded-xl p-5 mt-10 w-full">
-          <p className="text-muted-foreground text-xs">
-            Você também receberá um e-mail com os dados de acesso ao painel. Caso não receba em até 5 minutos, verifique sua caixa de spam.
+        <div className="glass-card mt-10 w-full rounded-2xl p-5">
+          <p className="text-xs text-muted-foreground">
+            Você também vai receber um e-mail com os dados de acesso ao painel. Se não chegar em até 5 minutos, confira a
+            caixa de spam.
           </p>
         </div>
       </div>
